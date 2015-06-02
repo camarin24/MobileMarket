@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" /> 
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.theme-1.4.5.css"/>
+    <title>Hello World</title>
+</head>
+
+<div data-role="page" id="#uno">
+    <header data-role="header">
+        <a href="#bars" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
+        <a href="#serch" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">No text</a>
+        <h1>MobileMarket</h1>
+    </header>
+    <div role="main" class="ui-content">
+        
+    </div>
+    <footer data-role="footer" data-position="fixed">
+        <h1>Pie</h1>
+    </footer>
+
+    <div data-role="panel" id="bars" data-theme="b" data-display="push">
+       <ul data-role="listview">
+            <li><a href="#">Apple</a></li>
+            <li><a href="#">Banana</a></li>
+            <li><a href="#">Cherry</a></li>
+            <li><a href="#">Cranberry</a></li>
+            <li><a href="#">Grape</a></li>
+            <li><a href="#">Orange</a></li>
+        </ul>
+    </div>
+
+    <div data-role="panel" id="serch" data-position="right" data-display="overlay" >
+        <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars...">
+            <li><a href="#">Acura</a></li>
+            <li><a href="#">Audi</a></li>
+            <li><a href="#">BMW</a></li>
+            <li><a href="#">Cadillac</a></li>
+            <li><a href="#">Chrysler</a></li>
+            <li><a href="#">Dodge</a></li>
+            <li><a href="#">Ferrari</a></li>
+            <li><a href="#">Ford</a></li>
+            <li><a href="#">GMC</a></li>
+            <li><a href="#">Honda</a></li>
+            <li><a href="#">Hyundai</a></li>
+            <li><a href="#">Infiniti</a></li>
+            <li><a href="#">Jeep</a></li>
+            <li><a href="#">Kia</a></li>
+            <li><a href="#">Lexus</a></li>
+            <li><a href="#">Mini</a></li>
+            <li><a href="#">Nissan</a></li>
+            <li><a href="#">Porsche</a></li>
+            <li><a href="#">Subaru</a></li>
+            <li><a href="#">Toyota</a></li>
+            <li><a href="#">Volkswagen</a></li>
+            <li><a href="#">Volvo</a></li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!--Scripts -->
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/hello.js"></script>
+
+</body>
+</html>
