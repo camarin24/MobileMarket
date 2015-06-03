@@ -1,81 +1,294 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" /> 
+    <meta charset="utf-8" /> 
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>
     <link rel="stylesheet" href="css/jquery.mobile.theme-1.4.5.css"/>
-    <title>Hello World</title> 
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>MobileMarket</title> 
 </head>
+    <body>
 
-<div data-role="page" id="#uno">
-    <header data-role="header">
-        <a href="#bars" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
-        <a href="#serch" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">No text</a>
-        <h1>MobileMarket</h1>
-    </header>
-    <div role="main" class="ui-content">
+        <!--Pagina de inicio-->
+        <div data-role="page" id="inicio">
+            <header data-role="header">
+                <a href="#bars" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
+                <a href="#serch" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">No text</a>
+                <h1>MobileMarket</h1>
+            </header>
+            <div role="main" class="ui-content">
+                 <div class="ui-body ui-body-a ui-corner-all">
+                    <h1>Hola</h1>
+                </div>
+            </div>
+            <footer data-role="footer" data-position="fixed">
+                    <h1>Pie</h1>
+            </footer>
+            <div data-role="panel" id="bars" data-theme="b" data-display="push">
+                <ul data-role="listview">
+                    <li><a href="#inicio" data-transition="fade">Inicio</a></li>
+                    <li><a href="#pedidos" data-transition="fade">Pedidos</a></li>
+                    <li><a href="#listas">Listas</a></li>
+                    <li><a href="#referido">Referidos</a></li>
+                    <li><a href="#notificaciones">Notificaciones</a></li>
+                    <li><a href="#">Indicadores</a></li>
+                    <li><a href="#">PQR</a></li> 
+                </ul>
+            </div>
+
+            <div data-role="panel" id="serch" data-position="right" data-display="overlay" >
+                <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars...">
+                    <li><a href="#">Acura</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--Pagina de Pedidos-->
+        <div data-role="page" id="pedidos">
+            <header data-role="header">
+                <a href="#bars" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
+                <a href="#serch" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">No text</a>
+                <h1>Pedidos</h1>
+            </header>
+            <div role="main" class="ui-content"></div>
+            <footer data-role="footer" data-position="fixed">
+                <div data-role="controlgroup" data-type="horizontal" data-mini="true">
+                    <a href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-plus ui-btn-b">Add</a>
+                    <a href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-delete ui-btn-b">Delete</a>
+                    <a href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-grid ui-btn-b">More</a>
+                </div>
+            </footer>
+
+            <div data-role="panel" id="bars" data-theme="b" data-display="push">
+                <ul data-role="listview">
+                    <li><a href="#inicio" data-transition="fade">Inicio</a></li>
+                    <li><a href="#pedidos" data-transition="fade">Pedidos</a></li>
+                    <li><a href="#listas">Listas</a></li>
+                    <li><a href="#referido">Referidos</a></li>
+                    <li><a href="#notificaciones">Notificaciones</a></li>
+                    <li><a href="#">Indicadores</a></li>
+                    <li><a href="#">PQR</a></li> 
+                </ul>
+            </div>
+
+            <div data-role="panel" id="serch" data-position="right" data-display="overlay" >
+                <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars...">
+                    <li><a href="#">Acura</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--Pagina de Listas-->
+        <div data-role="page" id="listas">
+            <header data-role="header">
+                <a href="#bars" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
+                <a href="#serch" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">No text</a>
+                <h1>Listas</h1>
+            </header>
+            <div role="main" class="ui-content"></div>
+            <footer data-role="footer" data-position="fixed">
+                <h1>Pie</h1>
+            </footer>
+
+            <div data-role="panel" id="bars" data-theme="b" data-display="push">
+                <ul data-role="listview">
+                    <li><a href="#inicio" data-transition="fade">Inicio</a></li>
+                    <li><a href="#pedidos" data-transition="fade">Pedidos</a></li>
+                    <li><a href="#listas">Listas</a></li>
+                    <li><a href="#referido">Referidos</a></li>
+                    <li><a href="#notificaciones">Notificaciones</a></li>
+                    <li><a href="#">Indicadores</a></li>
+                    <li><a href="#">PQR</a></li> 
+                </ul>
+            </div>
+
+            <div data-role="panel" id="serch" data-position="right" data-display="overlay" >
+                <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars...">
+                    <li><a href="#">Acura</a></li>
+                </ul>
+            </div>
+            <div role="main" class="ui-content">
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider" data-theme="b"><h1>Seperate Page Sublists</h1></li>
+                        <li>
+                        <h1>Lista de numeros</h1>
+                            <ul>
+                                <li>Uno</li>
+                                <li>Dos</li>
+                                <li>Tres</li>
+                                <li>Cuatro</li>
+                                <li>Quinto</li>
+                            </ul>
+                        </li> 
+                        <li>
+                        <h1>Lista de numeros</h1>
+                            <ul>
+                                <li>Uno</li>
+                                <li>Dos</li>
+                                <li>Tres</li>
+                                <li>Cuatro</li>
+                                <li>Quinto</li>
+                            </ul>
+                        </li>
+                        <li>
+                        <h1>Lista de numeros</h1>
+                            <ul>
+                                <li>Uno</li>
+                                <li>Dos</li>
+                                <li>Tres</li>
+                                <li>Cuatro</li>
+                                <li>Quinto</li>
+                            </ul>
+                        </li>        
+                </ul>
+            </div>
+        </div>      
+        <!--Pagina de Referidos-->
+        <div data-role="page" id="referido">
+            <header data-role="header">
+                <a href="#bars" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
+                <a href="#serch" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">No text</a>
+                <h1>Referidos</h1>
+            </header>
+            <div role="main" class="ui-content">
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider" data-theme="b"><h1>Seperate Page Sublists</h1></li>
+                    <li>
+                        <h1>Lista de numeros</h1>
+                            <ul>
+                                <li>Uno</li>
+                                <li>Dos</li>
+                                <li>Tres</li>
+                                <li>Cuatro</li>
+                                <li>Quinto</li>
+                            </ul>
+                        </li> 
+                        <li>
+                        <h1>Lista de numeros</h1>
+                            <ul>
+                                <li>Uno</li>
+                                <li>Dos</li>
+                                <li>Tres</li>
+                                <li>Cuatro</li>
+                                <li>Quinto</li>
+                            </ul>
+                        </li>
+                        <li>
+                        <h1>Lista de numeros</h1>
+                            <ul>
+                                <li>Uno</li>
+                                <li>Dos</li>
+                                <li>Tres</li>
+                                <li>Cuatro</li>
+                                <li>Quinto</li>
+                            </ul>
+                        </li>
+                </ul>
+            </div>
+            <footer data-role="footer" class="nav-glyphish-example" datta-theme="b" data-position="fixed">
+                <div data-role="navbar" data-grid="d" data-iconpos="bottom" >                  
+                        <li class="list-style"><a href="#crearRf" data-icon="plus">Crear referido</a></li>    
+                </div>
+            </footer>
+
+            <div data-role="panel" id="bars" data-theme="b" data-display="push">
+                <ul data-role="listview">
+                    <li><a href="#inicio" data-transition="fade">Inicio</a></li>
+                    <li><a href="#pedidos" data-transition="fade">Pedidos</a></li>
+                    <li><a href="#listas">Listas</a></li>
+                    <li><a href="#referido">Referidos</a></li>
+                    <li><a href="#notificaciones">Notificaciones</a></li>
+                    <li><a href="#">Indicadores</a></li>
+                    <li><a href="#">PQR</a></li> 
+                </ul>
+            </div>
+
+
+            <div data-role="panel" id="serch" data-position="right" data-display="overlay" >
+                <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars...">
+                    <li><a href="#">Acura</a></li>
+                    <li><a href="#">Audi</a></li>
+                    <li><a href="#">Volvo</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--Pagina de notificaciones-->
+        <div data-role="page" id="notificaciones">
+            <header data-role="header">
+                <a href="#bars" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
+                <a href="#serch" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">No text</a>
+                <h1>Notificaciones</h1>
+            </header>
+            <div role="main" class="ui-content">
+
+            </div>
+            <footer data-role="footer" data-position="fixed">
+                <h1>Pie</h1>
+            </footer>
+
+            <div data-role="panel" id="bars" data-theme="b" data-display="push">
+                <ul data-role="listview">
+                    <li><a href="#inicio" data-transition="fade">Inicio</a></li>
+                    <li><a href="#pedidos" data-transition="fade">Pedidos</a></li>
+                    <li><a href="#listas">Listas</a></li>
+                    <li><a href="#referido">Referidos</a></li>
+                    <li><a href="#notificaciones">Notificaciones</a></li>
+                    <li><a href="#">Indicadores</a></li>
+                    <li><a href="#">PQR</a></li> 
+                </ul>
+            </div>
+
+            <div data-role="panel" id="serch" data-position="right" data-display="overlay" >
+                <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars...">
+                    <li><a href="#">Acura</a></li>
+                    <li><a href="#">Audi</a></li>
+                    <li><a href="#">Volvo</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--Crear referido-->
+        <div data-role="page" id="crearRf">
+            <header data-role="header">
+                <a href="#bars" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
+                <h1>Crear referido</h1>
+            </header>
+            <div role="main" class="ui-content">
+                <form action="">
+                    <label for="text-3">Nombre</label>
+                    <input type="text" data-clear-btn="true">
+                    <label for="text-3">Primer apellido</label>
+                    <input type="text" data-clear-btn="true">
+                    <label for="text-3">Segundo apellido</label>
+                    <input type="text" data-clear-btn="true">
+                    <label for="text-3"></label>
+                    <input type="text" data-clear-btn="true">
+                </form>
+            </div>
+            <footer data-role="footer" data-position="fixed">
+                <h1>Pie</h1>
+            </footer>
+
+            <div data-role="panel" id="bars" data-theme="b" data-display="push">
+                <ul data-role="listview">
+                    <li><a href="#inicio" data-transition="fade">Inicio</a></li>
+                    <li><a href="#pedidos" data-transition="fade">Pedidos</a></li>
+                    <li><a href="#listas">Listas</a></li>
+                    <li><a href="#referido">Referidos</a></li>
+                    <li><a href="#notificaciones">Notificaciones</a></li>
+                    <li><a href="#">Indicadores</a></li>
+                    <li><a href="#">PQR</a></li> 
+                </ul>
+            </div>
+
+        </div>
         
-    </div>
-    <footer data-role="footer" data-position="fixed">
-        <h1>Pie</h1>
-    </footer>
-
-    <div data-role="panel" id="bars" data-theme="b" data-display="push">
-       <ul data-role="listview">
-            <li><a href="#">Apple</a></li>
-            <li><a href="#">Banana</a></li>
-            <li><a href="#">Cherry</a></li>
-            <li><a href="#">Cranberry</a></li>
-            <li><a href="#">Grape</a></li>
-            <li><a href="#">Orange</a></li>
-        </ul>
-    </div>
-
-    <div data-role="panel" id="serch" data-position="right" data-display="overlay" >
-        <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars...">
-            <li><a href="#">Acura</a></li>
-            <li><a href="#">Audi</a></li>
-            <li><a href="#">BMW</a></li>
-            <li><a href="#">Cadillac</a></li>
-            <li><a href="#">Chrysler</a></li>
-            <li><a href="#">Dodge</a></li>
-            <li><a href="#">Ferrari</a></li>
-            <li><a href="#">Ford</a></li>
-            <li><a href="#">GMC</a></li>
-            <li><a href="#">Honda</a></li>
-            <li><a href="#">Hyundai</a></li>
-            <li><a href="#">Infiniti</a></li>
-            <li><a href="#">Jeep</a></li>
-            <li><a href="#">Kia</a></li>
-            <li><a href="#">Lexus</a></li>
-            <li><a href="#">Mini</a></li>
-            <li><a href="#">Nissan</a></li>
-            <li><a href="#">Porsche</a></li>
-            <li><a href="#">Subaru</a></li>
-            <li><a href="#">Toyota</a></li>
-            <li><a href="#">Volkswagen</a></li>
-            <li><a href="#">Volvo</a></li>
-        </ul>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-<!--Scripts -->
-<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
-<script type="text/javascript" src="js/hello.js"></script>
-
-</body>
+        <!--Scripts -->
+        <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+    </body>
 </html>
