@@ -104,6 +104,7 @@
             </ul>
         </div>
         <!--Dentro de las listas-->
+        <!--Hay un bug dentro de las listas, a veces aparecen los items y a veces no, revisar-->
         <div data-role="panel" id="serch" data-position="right" data-display="overlay" >
             <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars...">
                 <li><a href="#">Acura</a></li>uno
@@ -112,19 +113,36 @@
         <div role="main" class="ui-content" id="Lista">
             <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Nombre de la lista" > 
             <!--<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Nombre de la lista" data-autodividers="true">El data-autodividiers si funciona, divide todo por el abecedario ,pero no le pone color, hay que averiguar como-->
+             <li data-role="list-divider"data-theme="b"><div class="ui-li-count">2</div><h1>Favoritos</h1></li>
+                    <li class="ui-btn ui-icon-star ui-btn-icon-left">
+                    <h1>Lista de favoritos</h1>
+                        <ul>
+                            <li>Uno</li>
+                            <li>Dos</li>
+                            <li>Tres</li>
+                            <li>Cuatro</li>
+                            <li>Quinto</li>
+                        </ul>
+                 </li> 
+
             <li data-role="list-divider"data-theme="b"><div class="ui-li-count">2</div><h1>A</h1></li>
                     <li>
                     <h1>Aseo</h1>
                         <ul>      
-                            <li><img src="http://tropi.azurewebsites.net/images/Catalogo/0050438.jpg" width="100" height="100"/>Margarina con Sal x 250gr<br>
-                            Marca:Rama<br>
-                            Precio:$3,922<br>
-                            Unidades:5</li>
+                            <li>Uno</li>
+                            <li>Dos</li>
+                            <li>Tres</li>
+                            <li>Cuatro</li>
+                            <li>Quinto</li>
                         </ul>
                     </li>         
                     <li>
                     <h1>Alimentos y bebidas</h1>
                         <ul>
+                            <li><img src="http://tropi.azurewebsites.net/images/Catalogo/0050438.jpg" width="100" height="100"/>Margarina con Sal x 250gr<br>
+                            Marca:Rama<br>
+                            Precio:$3,922<br>
+                            Unidades:5</li>
                             <li>Uno</li>
                             <li>Dos</li>
                             <li>Tres</li>
@@ -145,7 +163,7 @@
                             <li>Cuatro</li>
                             <li>Quinto</li>
                         </ul>
-                    </li>        
+                 </li>        
             </ul>
         </div>
     </div>      
