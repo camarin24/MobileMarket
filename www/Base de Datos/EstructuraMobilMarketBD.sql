@@ -1,7 +1,3 @@
-/*CREATE TABLE "test_table" ("id" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , 
-  "data" TEXT, "data_num" INTEGER)* Ejemplo de tabla en Sqlite*/
-
-/*La base de datos funciona correctamente, hay que agregar una version sin salto de lineas*/
 -- -----------------------------------------------------
 -- Table Tbl_EstadoPedido
 -- -----------------------------------------------------
@@ -9,6 +5,7 @@ CREATE TABLE IF NOT EXISTS Tbl_EstadoPedido (
   idEstadoPedido INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,
   nombre VARCHAR(45) NOT NULL
 );
+
 -- -----------------------------------------------------
 -- Table Tbl_Departamento
 -- -----------------------------------------------------
@@ -16,6 +13,7 @@ CREATE TABLE IF NOT EXISTS Tbl_Departamento (
   idDepartamento INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,
   nombre VARCHAR(45) NOT NULL
 );
+
 -- -----------------------------------------------------
 -- Table Tbl_municipio
 -- -----------------------------------------------------
@@ -27,6 +25,7 @@ CREATE TABLE IF NOT EXISTS Tbl_municipio (
     FOREIGN KEY (Tbl_Departamento_idDepartamento)
     REFERENCES Tbl_Departamento (idDepartamento)
 );
+
 -- -----------------------------------------------------
 -- Table Tbl_Barrio
 -- -----------------------------------------------------
@@ -38,6 +37,8 @@ CREATE TABLE IF NOT EXISTS Tbl_Barrio (
     FOREIGN KEY (Tbl_municipio_idMunicipio)
     REFERENCES Tbl_municipio (idMunicipio)
 );
+
+
 -- -----------------------------------------------------
 -- Table Tbl_TipoDocumento
 -- -----------------------------------------------------
@@ -45,6 +46,7 @@ CREATE TABLE IF NOT EXISTS Tbl_TipoDocumento (
   idTipoDocumento INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,
   nombre VARCHAR(45) NOT NULL
 );
+
 -- -----------------------------------------------------
 -- Table Tbl_TipoPersona
 -- -----------------------------------------------------
@@ -52,6 +54,7 @@ CREATE TABLE IF NOT EXISTS Tbl_TipoPersona (
   idTipoPersona INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,
   nombre VARCHAR(45) NOT NULL
 );
+ 
 -- -----------------------------------------------------
 -- Table Tbl_Persona
 -- -----------------------------------------------------
@@ -70,19 +73,20 @@ CREATE TABLE IF NOT EXISTS Tbl_Persona (
   id_Consolidador INT NULL,
   Tbl_TipoDocumento_idTipoDocumento INT NOT NULL,
   Tbl_TipoReferido_idTipoPersona INT NOT NULL,
-  
   CONSTRAINT fk_Tbl_Persona_Tbl_TipoDocumento1
-  FOREIGN KEY (Tbl_TipoDocumento_idTipoDocumento)
-  REFERENCES Tbl_TipoDocumento (idTipoDocumento),
+    FOREIGN KEY (Tbl_TipoDocumento_idTipoDocumento)
+    REFERENCES Tbl_TipoDocumento (idTipoDocumento)
 
   CONSTRAINT fk_Tbl_Persona_Tbl_Persona1
     FOREIGN KEY (id_Consolidador)
-    REFERENCES Tbl_Persona (id_Persona),
+    REFERENCES Tbl_Persona (id_Persona)
 
   CONSTRAINT fk_Tbl_Persona_Tbl_TipoReferido1
     FOREIGN KEY (Tbl_TipoReferido_idTipoPersona)
     REFERENCES Tbl_TipoPersona (idTipoPersona)
 );
+
+
 
 -- -----------------------------------------------------
 -- Table Tbl_Sucursal
@@ -103,7 +107,7 @@ CREATE TABLE IF NOT EXISTS Tbl_Sucursal (
   Tbl_Persona_id_Persona INT NOT NULL,
   CONSTRAINT fk_Tbl_Sucursal_Tbl_Barrio1
     FOREIGN KEY (Tbl_Barrio_idBarrio)
-    REFERENCES Tbl_Barrio (idBarrio),
+    REFERENCES Tbl_Barrio (idBarrio)
 
   CONSTRAINT fk_Tbl_Sucursal_Tbl_Persona1
     FOREIGN KEY (Tbl_Persona_id_Persona)
@@ -124,10 +128,9 @@ CREATE TABLE IF NOT EXISTS Tbl_Pedidos (
   Tbl_EstadoPedido_idEstadoPedido INT NOT NULL,
   Tbl_Sucursal_idSucursal INT NOT NULL,
   plazo_Pago VARCHAR(45) NOT NULL,
-
   CONSTRAINT fk_Tbl_Pedidos_Tbl_EstadoPedido1
     FOREIGN KEY (Tbl_EstadoPedido_idEstadoPedido)
-    REFERENCES Tbl_EstadoPedido (idEstadoPedido),
+    REFERENCES Tbl_EstadoPedido (idEstadoPedido)
 
   CONSTRAINT fk_Tbl_Pedidos_Tbl_Sucursal1
     FOREIGN KEY (Tbl_Sucursal_idSucursal)
@@ -146,6 +149,7 @@ CREATE TABLE IF NOT EXISTS Tbl_Fabricante (
     FOREIGN KEY (id_Casa)
     REFERENCES Tbl_Fabricante (id_Fabricante)
 );
+
 -- -----------------------------------------------------
 -- Table Tbl_SubCategoria
 -- -----------------------------------------------------
@@ -154,7 +158,6 @@ CREATE TABLE IF NOT EXISTS Tbl_SubCategoria (
   nombre VARCHAR(45) NOT NULL,
   descripcion VARCHAR(45) NOT NULL
 );
-
 -- -----------------------------------------------------
 -- Table Tbl_Categoria
 -- -----------------------------------------------------
@@ -163,7 +166,6 @@ CREATE TABLE IF NOT EXISTS Tbl_Categoria (
   nombre VARCHAR(45) NOT NULL,
   descripcion VARCHAR(45) NULL
 );
-
 -- -----------------------------------------------------
 -- Table Tbl_Productos
 -- -----------------------------------------------------
@@ -180,22 +182,23 @@ CREATE TABLE IF NOT EXISTS Tbl_Productos (
   Tbl_Categoria_idCategoria INT NOT NULL,
   CONSTRAINT fk_Tbl_Productos_Tbl_Marca1
     FOREIGN KEY (Tbl_Marca_idMarca)
-    REFERENCES Tbl_Fabricante (id_Fabricante),
+    REFERENCES Tbl_Fabricante (id_Fabricante)
 
   CONSTRAINT fk_Tbl_Productos_Tbl_SubCategoria1
     FOREIGN KEY (Tbl_SubCategoria_idSubCategoria)
-    REFERENCES Tbl_SubCategoria (idSubCategoria),
+    REFERENCES Tbl_SubCategoria (idSubCategoria)
 
   CONSTRAINT fk_Tbl_Productos_Tbl_Categoria1
     FOREIGN KEY (Tbl_Categoria_idCategoria)
     REFERENCES Tbl_Categoria (idCategoria)
 );
+
 -- -----------------------------------------------------
 -- Table Tbl_Telefonos
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Tbl_Telefonos (
-  idTelefono INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,
-  numero VARCHAR(45) NOT NULL,
+  idTelefono INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE,
+  numeo VARCHAR(45) NOT NULL,
   Tbl_Sucursal_idSucursal INT NOT NULL,
   CONSTRAINT fk_Tbl_Telefonos_Tbl_Sucursal1
     FOREIGN KEY (Tbl_Sucursal_idSucursal)
@@ -206,7 +209,7 @@ CREATE TABLE IF NOT EXISTS Tbl_Telefonos (
 -- Table Tbl_parentesco
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Tbl_parentesco (
-  idParentesco INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,
+  idParentesco INT NOT NULL,
   nombre VARCHAR(45) NOT NULL
 );
 
@@ -218,12 +221,11 @@ CREATE TABLE IF NOT EXISTS Tbl_RangoSalarial (
   rango_Inferior VARCHAR(45) NULL,
   rango_Superior VARCHAR(45) NULL
 );
-
 -- -----------------------------------------------------
 -- Table Tbl_Familiar
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Tbl_Familiar (
-  idFamiliar INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,
+  idFamiliar INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE,
   fechaNacimimiento DATE NOT NULL,
   hobies VARCHAR(45) NOT NULL,
   sexo TINYINT(1) NULL,
@@ -232,11 +234,11 @@ CREATE TABLE IF NOT EXISTS Tbl_Familiar (
   Tbl_Persona_id_Persona INT NOT NULL,
   CONSTRAINT fk_Tbl_Perfil_Tbl_parentesco1
     FOREIGN KEY (Tbl_parentesco_idParentesco)
-    REFERENCES Tbl_parentesco (idParentesco),
+    REFERENCES Tbl_parentesco (idParentesco)
 
   CONSTRAINT fk_Tbl_Familiar_Tbl_RangoSalarial1
     FOREIGN KEY (Tbl_RangoSalarial_idRangoSalarial)
-    REFERENCES Tbl_RangoSalarial (idRangoSalarial),
+    REFERENCES Tbl_RangoSalarial (idRangoSalarial)
 
   CONSTRAINT fk_Tbl_Familiar_Tbl_Persona1
     FOREIGN KEY (Tbl_Persona_id_Persona)
@@ -256,7 +258,7 @@ CREATE TABLE IF NOT EXISTS Tbl_DetallePedido (
   Tbl_Pedidos_idUsuario INT NOT NULL,
   CONSTRAINT fk_Tbl_DetallePedido_Tbl_Productos1
     FOREIGN KEY (Tbl_Productos_idProductos)
-    REFERENCES Tbl_Productos (idProductos),
+    REFERENCES Tbl_Productos (idProductos)
 
   CONSTRAINT fk_Tbl_DetallePedido_Tbl_Pedidos1
     FOREIGN KEY (Tbl_Pedidos_idPedidos)
@@ -267,7 +269,7 @@ CREATE TABLE IF NOT EXISTS Tbl_DetallePedido (
 -- Table Tbl_ListasPersonalizadas
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Tbl_ListasPersonalizadas (
-  idListasPersonalizadas INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE,
+  idListasPersonalizadas INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,
   nombreListaPersonalizada VARCHAR(45) NOT NULL,
   estado TINYINT(1) NOT NULL DEFAULT 1,
   Tbl_Persona_id_Persona INT NOT NULL,
@@ -275,6 +277,7 @@ CREATE TABLE IF NOT EXISTS Tbl_ListasPersonalizadas (
     FOREIGN KEY (Tbl_Persona_id_Persona)
     REFERENCES Tbl_Persona (id_Persona)
 );
+
 -- -----------------------------------------------------
 -- Table Tbl_Empresa
 -- -----------------------------------------------------
@@ -289,33 +292,35 @@ CREATE TABLE IF NOT EXISTS Tbl_Empresa (
     FOREIGN KEY (Tbl_Persona_id_Persona)
     REFERENCES Tbl_Persona (id_Persona)
 );
+
 -- -----------------------------------------------------
 -- Table Tbl_CuentasUsuario
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Tbl_CuentasUsuario (
-  contrasenia INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,
+  contrasenia VARCHAR(45) NOT NULL,
   estado TINYINT(1) NOT NULL DEFAULT 1,
-  nunmeroDocumento VARCHAR(45) NOT NULL,
-  Tbl_Persona_id_Persona INT NOT NULL,
-    CONSTRAINT fk_Tbl_CuentasUsuario_Tbl_Persona1
+  nunmeroDocumento INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
+Tbl_Persona_id_Persona INT NOT NULL,
+  CONSTRAINT fk_Tbl_CuentasUsuario_Tbl_Persona1
     FOREIGN KEY (Tbl_Persona_id_Persona)
     REFERENCES Tbl_Persona (id_Persona)
 );
-
 -- -----------------------------------------------------
 -- Table Tbl_DetalleListaPersonalizada
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Tbl_DetalleListaPersonalizada (
-  idDetalleListaPersonalizada INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,
+  idDetalleListaPersonalizada INT NOT NULL,
   Tbl_Productos_idProductos INT NOT NULL,
   Tbl_Productos_Tbl_Categoria_idCategoria INT NOT NULL,
   Tbl_Productos_Tbl_Presenataciones_idPresenataciones INT NOT NULL,
   Tbl_ListasPersonalizadas_idListasPersonalizadas INT NOT NULL,
   CONSTRAINT fk_Tbl_DetalleListaPersonalizada_Tbl_Productos1
     FOREIGN KEY (Tbl_Productos_idProductos)
-    REFERENCES Tbl_Productos (idProductos),
+    REFERENCES Tbl_Productos (idProductos)
 
   CONSTRAINT fk_Tbl_DetalleListaPersonalizada_Tbl_ListasPersonalizadas1
     FOREIGN KEY (Tbl_ListasPersonalizadas_idListasPersonalizadas)
     REFERENCES Tbl_ListasPersonalizadas (idListasPersonalizadas)
 );
+
+
