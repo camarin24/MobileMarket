@@ -20,16 +20,22 @@
             <h1>MobileMarket</h1>
         </header>
         <div role="main" class="ui-content">
-             <div class="ui-body ui-body-a ui-corner-all">
-                <h1>Hola</h1>
-            </div>
+             <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Encuentra tu producto" > 
+                <!--<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Nombre de la lista" data-autodividers="true">El data-autodividiers si funciona, divide todo por el abecedario ,pero no le pone color, hay que averiguar como-->
+                <li data-role="list-divider"data-theme="b"><div class="ui-li-count">♣</div><h1>Productos</h1></li>
+                    <li>
+                        <li><img src="http://tropi.azurewebsites.net/images/Catalogo/0050438.jpg" width="100" height="100"/>Margarina con Sal x 250gr<br>
+                        Marca:Rama<br>
+                        Precio:$3,922<br>
+                        Unidades:5</li>  
+                    </li>
+            </ul>
         </div>
         <footer data-role="footer" data-position="fixed">
                 <h1>Pie</h1>
         </footer>
         <div data-role="panel" id="bars1" data-theme="b" data-display="push">
             <ul data-role="listview">
-               <img src="img/user.png" class="img-heigth img-width img-border-radius">
                 <li><a href="#inicio" data-transition="fade">Inicio</a></li>
                 <li><a href="#pedidos" data-transition="fade">Pedidos</a></li>
                 <li><a href="#listas">Listas</a></li>
@@ -38,13 +44,7 @@
                 <li><a href="#indicadores">Indicadores</a></li>
                 <li><a href="#pqr">PQR</a></li> 
             </ul>
-        </div>
-
-        <div data-role="panel" id="serch" data-position="right" data-display="overlay" >
-            <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars...">
-                <li><a href="#">Acura</a></li>
-            </ul>
-        </div>
+        </div>     
     </div>
     <!--Pagina de Pedidos-->
     <div data-role="page" id="pedidos">
@@ -55,10 +55,12 @@
         </header>
         <div role="main" class="ui-content"></div>
         <footer data-role="footer" data-position="fixed">
-            <div data-role="controlgroup" data-type="horizontal" data-mini="true">
-                <a href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-plus ui-btn-b">Add</a>
-                <a href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-delete ui-btn-b">Delete</a>
-                <a href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-grid ui-btn-b">More</a>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="" data-icon="plus">Añadir</a></li>
+                    <li><a href="" data-icon="delete">Eliminar</a></li>
+                    <li><a href="" data-icon="grid">Opciones</a></li>
+                </ul>
             </div>
         </footer>
 
@@ -87,7 +89,19 @@
             <a href="#serch" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">No text</a>
             <h1>Listas</h1>
         </header>
-        <div role="main" class="ui-content"></div>
+        <div role="main" class="ui-content">
+            <ul data-role="listview" data-inset="true">
+                <li data-role="list-divider" data-theme="b"><h1>Seperate Page Sublists</h1></li>
+                   <li>
+                       <h1>Lista de numeros</h1>
+                       <ul>
+                           <li>uno</li>
+                           <li>dos</li>
+                           <li>tres</li>
+                       </ul>
+                   </li>
+            </ul>
+        </div>
         <footer data-role="footer" data-position="fixed">
             <h1>Pie</h1>
         </footer>
@@ -103,47 +117,12 @@
                 <li><a href="#pqr">PQR</a></li> 
             </ul>
         </div>
-
+        <!--Dentro de las listas-->
         <div data-role="panel" id="serch" data-position="right" data-display="overlay" >
             <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars...">
-                <li><a href="#">Acura</a></li>
+                <li><a href="#">Acura</a></li>uno
             </ul>
-        </div>
-        <div role="main" class="ui-content">
-            <ul data-role="listview" data-inset="true">
-                <li data-role="list-divider" data-theme="b"><h1>Seperate Page Sublists</h1></li>
-                    <li>
-                    <h1>Lista de numeros</h1>
-                        <ul>
-                            <li>Uno</li>
-                            <li>Dos</li>
-                            <li>Tres</li>
-                            <li>Cuatro</li>
-                            <li>Quinto</li>
-                        </ul>
-                    </li> 
-                    <li>
-                    <h1>Lista de numeros</h1>
-                        <ul>
-                            <li>Uno</li>
-                            <li>Dos</li>
-                            <li>Tres</li>
-                            <li>Cuatro</li>
-                            <li>Quinto</li>
-                        </ul>
-                    </li>
-                    <li>
-                    <h1>Lista de numeros</h1>
-                        <ul>
-                            <li>Uno</li>
-                            <li>Dos</li>
-                            <li>Tres</li>
-                            <li>Cuatro</li>
-                            <li>Quinto</li>
-                        </ul>
-                    </li>        
-            </ul>
-        </div>
+        </div>    
     </div>      
     <!--Pagina de Referidos-->
     <div data-role="page" id="referido">
