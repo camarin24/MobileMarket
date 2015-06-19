@@ -290,17 +290,61 @@
             <h1>Crear referido</h1>
         </header>
         <div role="main" class="ui-content">
+
             <form action="">
+                <label for="">Tipo de Documento</label>
+                <select name="" id="" data-theme="b">
+                    <option value="1">Cedula de ciudadanía</option>
+                    <option value="2">Cedula de extranjería</option>
+                    <option value="3">NIT</option>
+                    <option value="4">Pasaporte</option>
+                </select>
+                <label for="text-3">Documento</label>
+                <input type="text" data-clear-btn="true">
                 <label for="text-3">Nombre</label>
+                <input type="text" data-clear-btn="true">
+                <label for="text-3">Segundo Nombre</label>
                 <input type="text" data-clear-btn="true">
                 <label for="text-3">Primer apellido</label>
                 <input type="text" data-clear-btn="true">
                 <label for="text-3">Segundo apellido</label>
                 <input type="text" data-clear-btn="true">
-                <label for="text-3"></label>
+                <label for="text-3">Alias</label>
+                <input type="text" data-clear-btn="true">
+                <label for="text-3">Sexo</label>
+                <select name="">
+                    <option value="true">Femenino</option>
+                    <option value="false">Masculino</option>
+                </select>
+                <label for="text-3">Fecha de Nacimiento</label>
+                <input type="date" data-role="date">
+                <fieldset data-role="controlgroup" data-type="horizontal" >
+                    <legend>Tipo de Persona</legend>
+                        <input type="radio" name="tipo" id="radio-nat-1" value="natural" checked="checked" >
+                        <label for="radio-nat-1">Natural</label>
+                        <input type="radio" name="tipo" id="radio-nat-2" value="natural">
+                        <label for="radio-nat-2">Jurídica</label>
+                </fieldset>
+
+
+
+                <button type="submit">Registrar</button>
+            </form>
+
+            <form id="jud" action="">
+                <label for="text-3">NIT</label>
+                <input type="text" data-clear-btn="true">
+                <label for="text-3">Correo</label>
+                <input type="text" data-clear-btn="true">
+                <label for="text-3">Razón Social</label>
+                <input type="text" data-clear-btn="true">
+                <label for="text-3">URL</label>
                 <input type="text" data-clear-btn="true">
             </form>
+            
         </div>
+
+
         <footer data-role="footer" data-position="fixed">
             <h1>Pie</h1>
         </footer>
@@ -325,5 +369,6 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/mobile.js"></script>
 </body>
 </html>
