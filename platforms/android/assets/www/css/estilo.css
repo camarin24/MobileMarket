@@ -10,3 +10,8 @@
 .img-border-radius{
 	border-radius: 50%;
 }
+
+#Lista{
+    margin-top: -50px;
+    width:98%;
+}
