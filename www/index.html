@@ -16,20 +16,39 @@
     <div data-role="page" id="inicio">
         <header data-role="header">
             <a href="#bars1" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
-            <a href="#serch" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">No text</a>
             <h1>MobileMarket</h1>
         </header>
         <div role="main" class="ui-content">
-             <div class="ui-body ui-body-a ui-corner-all">
-                <h1>Hola</h1>
-            </div>
+            <ul data-role="listview" data-split-icon="gear" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:5px !important; ">
+                <li class="ui-li-has-alt ui-li-has-thumb ui-first-child"><a href="#" class="ui-btn">
+                    <img src="http://tropi.azurewebsites.net/images/Catalogo/0050438.jpg" style="height:100%;">
+                    <h2>Broken Bells</h2>
+                    <p>Broken Bells</p></a>
+                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop" aria-haspopup="true" aria-owns="purchase" aria-expanded="false" class="ui-btn ui-btn-icon-notext ui-icon-carat-r" title="Purchase album"></a>
+                </li>
+            </ul>
+            <ul data-role="listview" data-split-icon="gear" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:5px !important; ">
+                <li class="ui-li-has-alt ui-li-has-thumb ui-first-child"><a href="#" class="ui-btn">
+                    <img src="http://tropi.azurewebsites.net/images/Catalogo/0050438.jpg" style="height:100%;">
+                    <h2>Broken Bells</h2>
+                    <p>Broken Bells</p></a>
+                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop" aria-haspopup="true" aria-owns="purchase" aria-expanded="false" class="ui-btn ui-btn-icon-notext ui-icon-carat-r" title="Purchase album"></a>
+                </li>
+            </ul>
+            <ul data-role="listview" data-split-icon="gear" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:5px !important; ">
+                <li class="ui-li-has-alt ui-li-has-thumb ui-first-child"><a href="#" class="ui-btn">
+                    <img src="http://tropi.azurewebsites.net/images/Catalogo/0050438.jpg" style="height:100%;">
+                    <h2>Broken Bells</h2>
+                    <p>Broken Bells</p></a>
+                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop" aria-haspopup="true" aria-owns="purchase" aria-expanded="false" class="ui-btn ui-btn-icon-notext ui-icon-carat-r" title="Purchase album"></a>
+                </li>
+            </ul>
         </div>
         <footer data-role="footer" data-position="fixed">
                 <h1>Pie</h1>
         </footer>
         <div data-role="panel" id="bars1" data-theme="b" data-display="push">
             <ul data-role="listview">
-               <img src="img/user.png" class="img-heigth img-width img-border-radius">
                 <li><a href="#inicio" data-transition="fade">Inicio</a></li>
                 <li><a href="#pedidos" data-transition="fade">Pedidos</a></li>
                 <li><a href="#listas">Listas</a></li>
@@ -38,27 +57,22 @@
                 <li><a href="#indicadores">Indicadores</a></li>
                 <li><a href="#pqr">PQR</a></li> 
             </ul>
-        </div>
-
-        <div data-role="panel" id="serch" data-position="right" data-display="overlay" >
-            <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars...">
-                <li><a href="#">Acura</a></li>
-            </ul>
-        </div>
+        </div>     
     </div>
     <!--Pagina de Pedidos-->
     <div data-role="page" id="pedidos">
         <header data-role="header">
             <a href="#bars2" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
-            <a href="#serch" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">No text</a>
             <h1>Pedidos</h1>
         </header>
         <div role="main" class="ui-content"></div>
         <footer data-role="footer" data-position="fixed">
-            <div data-role="controlgroup" data-type="horizontal" data-mini="true">
-                <a href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-plus ui-btn-b">Add</a>
-                <a href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-delete ui-btn-b">Delete</a>
-                <a href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-grid ui-btn-b">More</a>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="" data-icon="plus">Añadir</a></li>
+                    <li><a href="" data-icon="delete">Eliminar</a></li>
+                    <li><a href="" data-icon="grid">Opciones</a></li>
+                </ul>
             </div>
         </footer>
 
@@ -73,21 +87,53 @@
                 <li><a href="#pqr">PQR</a></li> 
             </ul>
         </div>
-
-        <div data-role="panel" id="serch" data-position="right" data-display="overlay" >
-            <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars...">
-                <li><a href="#">Acura</a></li>
-            </ul>
-        </div>
     </div>
     <!--Pagina de Listas-->
     <div data-role="page" id="listas">
         <header data-role="header">
             <a href="#bars3" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
-            <a href="#serch" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">No text</a>
             <h1>Listas</h1>
         </header>
-        <div role="main" class="ui-content"></div>
+        <div role="main" class="ui-content">
+            <div data-role="panel" id="serch" data-position="right" data-display="overlay" >
+                <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars...">
+                    <li><a href="#">Acura</a></li>uno
+                </ul>
+            </div>
+            <div role="main" class="ui-content">
+                <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Nombre de la lista" > 
+                    <!--<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Nombre de la lista" data-autodividers="true">El data-autodividiers si funciona, divide todo por el abecedario ,pero no le pone color, hay que averiguar como-->
+                    <li data-role="list-divider"data-theme="b"><div class="ui-li-count">2</div><h1>Listas</h1></li>
+                        <li class="ui-btn ui-icon-star ui-btn-icon-left">
+                            <h1>Lista de favoritos</h1>
+                            <ul>
+                                <li>Uno</li>
+                                <li>Dos</li>
+                                <li>Tres</li>
+                                <li>Cuatro</li>
+                                <li>Quinto</li>
+                            </ul>
+                        </li> 
+
+                    <li>
+                        <h1>Alimentos y bebidas</h1>
+                        <ul><!--Averiguar como se ponen las imagenes de un tamaño mayor-->
+                            <li><img src="img/0050438.jpg" width="200" height="200"/><b>Margarina con Sal x 250gr<br>Marca:Rama<br>Precio:$3,922</b><br>
+                            <small>Unidades:5</small></li>
+                            <!---->
+                            <li><img src="img/0080868.jpg" width="200" height="200"/><b>Galletas Original x 5 tacos<br>Marca:Saltinas<br>$3,872</b><br>
+                            <small>Unidades:3</small></li>
+                            <li><img src="img/0080500.jpg" width="200" height="200"/><b>Milo Bolsa x 1,400gr<br>Marca:Milo<br>$33,271</b><br>
+                            <small>Unidades:6</small></li>
+                            <li><img src="img/0940012.jpg" width="200" height="200"/><b>Agua Glinter Sabor Manzana Verde x 350ml<br>Marca:Glinter<br> $3,196</b><br>
+                            <small>Unidades:18</small></li>
+                            <li id="NoExistencia"><img src="img/0400142.jpg" width="200" height="200"/><b>Bombóm con Sabor Frutas Natural x 24und<br>Marca:Lokiño<br> $3,583</b><br>
+                            <small>Unidades:0</small></li>
+                        </ul>
+                    </li>             
+                </ul>
+            </div>
+        </div>
         <footer data-role="footer" data-position="fixed">
             <h1>Pie</h1>
         </footer>
@@ -104,94 +150,40 @@
             </ul>
         </div>
         <!--Dentro de las listas-->
-        <!--Hay un bug dentro de las listas, a veces aparecen los items y a veces no, revisar-->
-        <div data-role="panel" id="serch" data-position="right" data-display="overlay" >
-            <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars...">
-                <li><a href="#">Acura</a></li>uno
-            </ul>
-        </div>
-        <div role="main" class="ui-content" id="Lista">
-            <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Nombre de la lista" > 
-            <!--<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Nombre de la lista" data-autodividers="true">El data-autodividiers si funciona, divide todo por el abecedario ,pero no le pone color, hay que averiguar como-->
-             <li data-role="list-divider"data-theme="b"><div class="ui-li-count">2</div><h1>Favoritos</h1></li>
-                    <li class="ui-btn ui-icon-star ui-btn-icon-left">
-                    <h1>Lista de favoritos</h1>
-                        <ul>
-                            <li>Uno</li>
-                            <li>Dos</li>
-                            <li>Tres</li>
-                            <li>Cuatro</li>
-                            <li>Quinto</li>
-                        </ul>
-                 </li> 
-
-            <li data-role="list-divider"data-theme="b"><div class="ui-li-count">2</div><h1>A</h1></li>
-                    <li>
-                    <h1>Aseo</h1>
-                        <ul>      
-                            <li>Uno</li>
-                            <li>Dos</li>
-                            <li>Tres</li>
-                            <li>Cuatro</li>
-                            <li>Quinto</li>
-                        </ul>
-                    </li>         
-                    <li>
-                    <h1>Alimentos y bebidas</h1>
-                        <ul><!--Averiguar como se ponen las imagenes de un tamaño mayor-->
-                            <li><img src="img/0050438.jpg" width="200" height="200"/><b>Margarina con Sal x 250gr<br>Marca:Rama<br>Precio:$3,922</b><br>
-                            <small>Unidades:5</small></li>
-                            <!---->
-                            <li><img src="img/0080868.jpg" width="200" height="200"/><b>Galletas Original x 5 tacos<br>Marca:Saltinas<br>$3,872</b><br>
-                            <small>Unidades:3</small></li>
-                            <li><img src="img/0080500.jpg" width="200" height="200"/><b>Milo Bolsa x 1,400gr<br>Marca:Milo<br>$33,271</b><br>
-                            <small>Unidades:6</small></li>
-                            <li><img src="img/0940012.jpg" width="200" height="200"/><b>Agua Glinter Sabor Manzana Verde x 350ml<br>Marca:Glinter<br> $3,196</b><br>
-                            <small>Unidades:18</small></li>
-                            <li id="NoExistencia"><img src="img/0400142.jpg" width="200" height="200"/><b>Bombóm con Sabor Frutas Natural x 24und<br>Marca:Lokiño<br> $3,583</b><br>
-                            <small>Unidades:0</small></li>
-                        </ul>
-                    </li>
-                </li>
-
-
-                <li data-role="list-divider" data-theme="b"><div class="ui-li-count">1</div><h1>B</h1></li>
-                    <li>
-                    <h1>Bebe</h1>
-                        <ul>
-                            <li>Uno</li>
-                            <li>Dos</li>
-                            <li>Tres</li>
-                            <li>Cuatro</li>
-                            <li>Quinto</li>
-                        </ul>
-                 </li>        
-            </ul>
-        </div>
-    </div>      
+        <!--Hay un bug dentro de las listas, a veces aparecen los items y a veces no, revisar-->    
+    </div>     
+    
     <!--Pagina de Referidos-->
     <div data-role="page" id="referido">
         <header data-role="header">
             <a href="#MReferido" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
-            <a href="#serch" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">No text</a>
             <h1>Referidos</h1>
         </header>
         <div role="main" class="ui-content">
-            <ul data-role="listview" data-inset="true">
-                <li data-role="list-divider" data-theme="b"><h1>Seperate Page Sublists</h1></li>
-                   <li>
-                       <h1>Lista de numeros</h1>
-                       <ul>
-                           <li>uno</li>
-                           <li>dos</li>
-                           <li>tres</li>
-                       </ul>
-                   </li>
+            <ul data-role="listview" data-split-icon="gear" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:5px !important; ">
+                <li class="ui-li-has-alt ui-li-has-thumb ui-first-child"><a href="#" class="ui-btn">
+                    <img src="http://tropi.azurewebsites.net/images/Catalogo/0050438.jpg">
+                    <h2>Jose Antonio Velez</h2>
+                    <p>Broken Bells</p></a>
+                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop" aria-haspopup="true" aria-owns="purchase" aria-expanded="false" class="ui-btn ui-btn-icon-notext ui-icon-gear" title="Purchase album"></a>
+                </li>
+                <li class="ui-li-has-alt ui-li-has-thumb"><a href="#" class="ui-btn">
+                    <img src="http://tropi.azurewebsites.net/images/Catalogo/0050438.jpg" style="height:100%;">
+                    <h2>Warning</h2>
+                    <p>Hot Chip</p></a>
+                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop" aria-haspopup="true" aria-owns="purchase" aria-expanded="false" class="ui-btn ui-btn-icon-notext ui-icon-gear" title="Purchase album"></a>
+                </li>
+                <li class="ui-li-has-alt ui-li-has-thumb ui-last-child"><a href="#" class="ui-btn">
+                    <img src="http://tropi.azurewebsites.net/images/Catalogo/0050438.jpg">
+                    <h2>Wolfgang Amadeus Phoenix</h2>
+                    <p>Phoenix</p></a>
+                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop" aria-haspopup="true" aria-owns="purchase" aria-expanded="false" class="ui-btn ui-btn-icon-notext ui-icon-gear" title="Purchase album"></a>
+                </li>
             </ul>
         </div>
         <footer data-role="footer" class="nav-glyphish-example" datta-theme="b" data-position="fixed">
             <div data-role="navbar" data-grid="d" data-iconpos="bottom" >                  
-                    <li class="list-style"><a href="#crearRf" data-icon="plus">Crear referido</a></li>    
+                <li class="list-style"><a href="#crearRf" data-icon="plus">Crear referido</a></li>    
             </div>
         </footer>
 
@@ -206,21 +198,11 @@
                 <li><a href="#pqr">PQR</a></li> 
             </ul>
         </div>
-
-
-        <div data-role="panel" id="serch" data-position="right" data-display="overlay" >
-            <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars...">
-                <li><a href="#">Acura</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Volvo</a></li>
-            </ul>
-        </div>
     </div>
     <!--Pagina de notificaciones-->
     <div data-role="page" id="notificaciones">
         <header data-role="header">
             <a href="#MNotificaciones" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
-            <a href="#serch" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">No text</a>
             <h1>Notificaciones</h1>
         </header>
         <div role="main" class="ui-content">
@@ -254,7 +236,6 @@
     <div data-role="page" id="indicadores">
         <header data-role="header">
             <a href="#MIndicadores" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
-            <a href="#serch" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">No text</a>
             <h1>Indicadores</h1>
         </header>
         <div role="main" class="ui-content">
@@ -275,20 +256,11 @@
                 <li><a href="#pqr">PQR</a></li> 
             </ul>
         </div>
-
-        <div data-role="panel" id="serch" data-position="right" data-display="overlay" >
-            <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars...">
-                <li><a href="#">Acura</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Volvo</a></li>
-            </ul>
-        </div>
     </div>
     <!--Pagina de PQR-->
     <div data-role="page" id="pqr">
         <header data-role="header">
             <a href="#Mpqr" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
-            <a href="#serch" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">No text</a>
             <h1>PQR</h1>
         </header>
         <div role="main" class="ui-content">
@@ -309,14 +281,6 @@
                 <li><a href="#pqr">PQR</a></li> 
             </ul>
         </div>
-
-        <div data-role="panel" id="serch" data-position="right" data-display="overlay" >
-            <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars...">
-                <li><a href="#">Acura</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Volvo</a></li>
-            </ul>
-        </div>
     </div>
 
     <!--Vistas secundarias-->
@@ -327,17 +291,60 @@
             <h1>Crear referido</h1>
         </header>
         <div role="main" class="ui-content">
+
             <form action="">
+                <label for="">Tipo de Documento</label>
+                <select name="" id="" data-theme="b">
+                    <option value="1">Cedula de ciudadanía</option>
+                    <option value="2">Cedula de extranjería</option>
+                    <option value="3">NIT</option>
+                    <option value="4">Pasaporte</option>
+                </select>
+                <label for="text-3">Documento</label>
+                <input type="text" data-clear-btn="true">
                 <label for="text-3">Nombre</label>
+                <input type="text" data-clear-btn="true">
+                <label for="text-3">Segundo Nombre</label>
                 <input type="text" data-clear-btn="true">
                 <label for="text-3">Primer apellido</label>
                 <input type="text" data-clear-btn="true">
                 <label for="text-3">Segundo apellido</label>
                 <input type="text" data-clear-btn="true">
-                <label for="text-3"></label>
+                <label for="text-3">Alias</label>
                 <input type="text" data-clear-btn="true">
+                <label for="text-3">Sexo</label>
+                <select name="">
+                    <option value="true">Femenino</option>
+                    <option value="false">Masculino</option>
+                </select>
+                <label for="text-3">Fecha de Nacimiento</label>
+                <input type="date" data-role="date">
+                <fieldset data-role="controlgroup" data-type="horizontal" >
+                    <legend>Tipo de Persona</legend>
+                        <input type="radio" name="tipo" id="radio-nat-1" value="natural" checked="checked" >
+                        <label for="radio-nat-1">Natural</label>
+                        <input type="radio" name="tipo" id="radio-nat-2" value="natural">
+                        <label for="radio-nat-2">Jurídica</label>
+                </fieldset>
+
+                <div id="jud">
+                    <label for="text-3">NIT</label>
+                    <input type="text" data-clear-btn="true">
+                    <label for="text-3">Correo</label>
+                    <input type="text" data-clear-btn="true">
+                    <label for="text-3">Razón Social</label>
+                    <input type="text" data-clear-btn="true">
+                    <label for="text-3">URL</label>
+                    <input type="text" data-clear-btn="true">
+                </div>
+
+                <button type="submit">Registrar</button>
+
             </form>
+            
         </div>
+
+
         <footer data-role="footer" data-position="fixed">
             <h1>Pie</h1>
         </footer>
@@ -362,5 +369,6 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/mobile.js"></script>
 </body>
 </html>
