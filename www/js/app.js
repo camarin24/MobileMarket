@@ -1,5 +1,5 @@
 $("#referido").ready(function(){
-	$.getJSON("http://localhost/servicios/mobilemarket_rest/API/referidos/referido/lista")
+	$.getJSON("http://127.0.0.1:8282/servicios/mobilemarket_rest/API/referidos/referido/lista")
 		.done(function(datos){
 			$.each(datos, function(indice,valor){
 				$("#employeeList").append('<li class="ui-li-has-alt ui-li-has-thumb ui-last-child"><a href="#" class="ui-btn">'+
