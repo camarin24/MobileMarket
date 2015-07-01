@@ -12,3 +12,27 @@ $("#referido").ready(function(){
 			});
 		});
 });
+
+
+$("#btnLogin").click(function(){
+
+   $.ajax({
+    'type':'post',
+    'dataType':'html',
+    'url':'http://127.0.0.1:8282/servicios/mobilemarket_rest/API/usuarios/login',
+    // 'data':{
+    //  'nombre':$("#txtNombre").val()
+    // },
+    'data': new FormData(document.getElementById("formLogin")),
+    'processData': false,
+          'contentType': false
+   }).done(function (){
+
+   		alert("Felicidades, entró!!");
+
+   }).fail(function (error){
+
+   		alert(error.responseText);
+
+   });
+ });
