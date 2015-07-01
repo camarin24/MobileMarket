@@ -10,8 +10,12 @@
 .img-border-radius{
 	border-radius: 50%;
 }
-
+/*Css para las listas personalizadas*/
 #Lista{
     margin-top: -50px;
     width:98%;
+}
+#NoExistencia{
+	background-color: #fd676a;
+	color:white;
 }

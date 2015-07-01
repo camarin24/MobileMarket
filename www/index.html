@@ -170,34 +170,15 @@
 
         <!--Hay un bug dentro de las listas, a veces aparecen los items y a veces no, revisar-->    
     </div>     
-
-
     <!--Pagina de Referidos-->
     <div data-role="page" id="referido">
         <header data-role="header">
             <a href="#MReferido" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
             <h1>Referidos</h1>
         </header>
-        <div role="main" class="ui-content">
-            <ul data-role="listview" data-split-icon="gear" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:5px !important; ">
-                <li class="ui-li-has-alt ui-li-has-thumb ui-first-child"><a href="#" class="ui-btn">
-                    <img src="http://tropi.azurewebsites.net/images/Catalogo/0050438.jpg">
-                    <h2>Jose Antonio Velez</h2>
-                    <p>Broken Bells</p></a>
-                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop" aria-haspopup="true" aria-owns="purchase" aria-expanded="false" class="ui-btn ui-btn-icon-notext ui-icon-gear" title="Purchase album"></a>
-                </li>
-                <li class="ui-li-has-alt ui-li-has-thumb"><a href="#" class="ui-btn">
-                    <img src="http://tropi.azurewebsites.net/images/Catalogo/0050438.jpg" style="height:100%;">
-                    <h2>Warning</h2>
-                    <p>Hot Chip</p></a>
-                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop" aria-haspopup="true" aria-owns="purchase" aria-expanded="false" class="ui-btn ui-btn-icon-notext ui-icon-gear" title="Purchase album"></a>
-                </li>
-                <li class="ui-li-has-alt ui-li-has-thumb ui-last-child"><a href="#" class="ui-btn">
-                    <img src="http://tropi.azurewebsites.net/images/Catalogo/0050438.jpg">
-                    <h2>Wolfgang Amadeus Phoenix</h2>
-                    <p>Phoenix</p></a>
-                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop" aria-haspopup="true" aria-owns="purchase" aria-expanded="false" class="ui-btn ui-btn-icon-notext ui-icon-gear" title="Purchase album"></a>
-                </li>
+        <div id="employeeListPage" role="main" class="ui-content">
+            <ul id="employeeList" data-role="listview" data-split-icon="gear" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:5px !important; ">
+                
             </ul>
         </div>
         <footer data-role="footer" class="nav-glyphish-example" datta-theme="b" data-position="fixed">
@@ -337,7 +318,7 @@
                     <option value="false">Masculino</option>
                 </select>
                 <label for="text-3">Fecha de Nacimiento</label>
-                <input type="date" data-role="date">
+                <input type="date" data-role="date" data-clear-btn="true">
                 <fieldset data-role="controlgroup" data-type="horizontal" >
                     <legend>Tipo de Persona</legend>
                         <input type="radio" name="tipo" id="radio-nat-1" value="natural" checked="checked" >
@@ -382,7 +363,7 @@
     </div>
 
     
-    <!--Scripts -->
+    <!--Scripts  inutil XD-->
     <script>
     $('#forLogin').submit(function() { 
         // recolecta los valores que inserto el usuario
@@ -413,6 +394,7 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/mobile.js"></script>
+    <script type="text/javascript" src="js/mobile.js"></script>  
+    <script type="text/javascript" src="js/app.js"></script>  
 </body>
 </html>
