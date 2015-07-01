@@ -1,0 +1,4 @@
+
+Options +FollowSymlinks -MultiViews
+RewriteEngine On
+RewriteRule ^([^/]+)/([^/]+) productos.php?peticion=$1&detalle=$2 [L,QSA]
