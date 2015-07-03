@@ -75,6 +75,17 @@ INSERT INTO `usuarios` (`idUsuario`, `nombre1`, `nombre2`, `apellido1`, `apellid
 (3, 'JUan', 'Diego', 'Escobar', 'Londonio', 'San antonio de prado', 1, 'Alias'),
 (4, 'Andy', 'Esteban', 'Morales', 'Mejia', 'Aranjuez', 1, 'Alias');
 
+
+CREATE TABLE IF NOT EXISTS `cuentausuarios` (
+`idCuentaUsuario` int(11) NOT NULL,
+  `nombreUsuario` varchar(30) NOT NULL,
+  `contrasenia` varchar(30) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+INSERT INTO `cuentausuarios` (`idCuentaUsuario`, `nombreUsuario`, `contrasenia`) VALUES
+(1, 'lacuenta', '12345');
+
+
 --
 -- Índices para tablas volcadas
 --
@@ -91,6 +102,10 @@ ALTER TABLE `productos`
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`idUsuario`);
 
+  ALTER TABLE `cuentausuarios`
+ ADD PRIMARY KEY (`idCuentaUsuario`);
+
+
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
@@ -105,6 +120,12 @@ ALTER TABLE `productos`
 --
 ALTER TABLE `usuarios`
   MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+ALTER TABLE `cuentausuarios`
+MODIFY `idCuentaUsuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
