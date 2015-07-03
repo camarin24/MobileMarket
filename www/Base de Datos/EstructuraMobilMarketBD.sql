@@ -253,7 +253,7 @@ CREATE TABLE IF NOT EXISTS Tbl_DetallePedido (
   precio DOUBLE NOT NULL,
   Tbl_Productos_idProductos INT NOT NULL,
   Tbl_Productos_Tbl_Categoria_idCategoria INT NOT NULL,
-  Tbl_Productos_Tbl_Presenataciones_idPresenataciones INT NOT NULL,
+  -- Tbl_Productos_Tbl_Presenataciones_idPresenataciones INT NOT NULL,
   Tbl_Pedidos_idPedidos INT NOT NULL,
   Tbl_Pedidos_idUsuario INT NOT NULL,
   CONSTRAINT fk_Tbl_DetallePedido_Tbl_Productos1
@@ -312,7 +312,7 @@ CREATE TABLE IF NOT EXISTS Tbl_DetalleListaPersonalizada (
   idDetalleListaPersonalizada INT NOT NULL,
   Tbl_Productos_idProductos INT NOT NULL,
   Tbl_Productos_Tbl_Categoria_idCategoria INT NOT NULL,
-  Tbl_Productos_Tbl_Presenataciones_idPresenataciones INT NOT NULL,
+  -- Tbl_Productos_Tbl_Presenataciones_idPresenataciones INT NOT NULL,
   Tbl_ListasPersonalizadas_idListasPersonalizadas INT NOT NULL,
   CONSTRAINT fk_Tbl_DetalleListaPersonalizada_Tbl_Productos1
     FOREIGN KEY (Tbl_Productos_idProductos)
