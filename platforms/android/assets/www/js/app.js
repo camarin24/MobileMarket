@@ -28,4 +28,29 @@ $("#productosContent").ready(function(){
 			});
 		});
 });
+$('#forLogin').submit(function() {  //Si entra pero por alguna razon no envia los datos
+	// recolecta los valores que inserto el usuario
+	var datosUsuario = $("#txtUsername").val()
+	var datosPassword = $("#txtPassword").val()
+	
+  	servidor ="http://localhost/servicios/mobilemarket_rest/API/login/login.php"
+
+	 $.getJSON( servidor,{usuario:datosUsuario ,password:datosPassword})
+	 .done(function(respuestaServer) {        
+		
+		if(respuestaServer.validacion == "ok"){
+		  
+		 	//Deberia ir a la pagina de inicio
+		 	alert("Datos correctos");
+			$.mobile.changePage("#inicio")
+		  
+		}else{
+		  
+		  alert("Usuario incorrecto");
+		}
+  
+	 })  
+	
+	return false;
+})
 

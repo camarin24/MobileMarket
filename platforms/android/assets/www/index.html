@@ -14,7 +14,7 @@
 <!--Login-->
     <div data-role="page" id="login">
         <div data-role="content">
-        <form id="forLogin"method="get">
+        <form id="forLogin">
             <div data-role="fieldcontent">
                 <label for="Username"><b>Usuario</b></label>
                 <input type="text" name="txtUsername" id="txtUsername" placeholder="Usuario">
@@ -128,8 +128,11 @@
             </div>
         </div>
         <footer data-role="footer" data-position="fixed">
-            <h1>Pie</h1>
-        </footer>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="" data-icon="plus">Añadir</a></li>
+                </ul>
+            </div>
 
         <div data-role="panel" id="bars3" data-theme="b" data-display="push">
             <ul data-role="listview">
@@ -271,31 +274,33 @@
 
             <form action="">
                 <label for="">Tipo de Documento</label>
-                <select name="" id="" data-theme="b">
+                <select name="" id="txtCedula" data-theme="b">
                     <option value="1">Cedula de ciudadanía</option>
                     <option value="2">Cedula de extranjería</option>
                     <option value="3">NIT</option>
                     <option value="4">Pasaporte</option>
                 </select>
                 <label for="text-3">Documento</label>
-                <input type="text" data-clear-btn="true">
+                <input type="text"  id="txtDocumento" data-clear-btn="true">
                 <label for="text-3">Nombre</label>
-                <input type="text" data-clear-btn="true">
+                <input type="text"  id="txtPrimerNombre" data-clear-btn="true">
                 <label for="text-3">Segundo Nombre</label>
-                <input type="text" data-clear-btn="true">
+                <input type="text"  id="txtSegundoNombre" data-clear-btn="true">
                 <label for="text-3">Primer apellido</label>
-                <input type="text" data-clear-btn="true">
+                <input type="text"  id="txtPrimerApellido" data-clear-btn="true">
                 <label for="text-3">Segundo apellido</label>
-                <input type="text" data-clear-btn="true">
+                <input type="text"  id="txtSegundoApellido" data-clear-btn="true">
                 <label for="text-3">Alias</label>
-                <input type="text" data-clear-btn="true">
+                <input type="text" id="txtAlias" data-clear-btn="true">
                 <label for="text-3">Sexo</label>
-                <select name="">
+                <select id="txtSexo" >
                     <option value="true">Femenino</option>
                     <option value="false">Masculino</option>
                 </select>
                 <label for="text-3">Fecha de Nacimiento</label>
                 <input type="date" data-role="date" data-clear-btn="true">
+                <label for="text-3">Correo</label>
+                <input type="text" id="txtCorreo" data-clear-btn="true">
                 <fieldset data-role="controlgroup" data-type="horizontal" >
                     <legend>Tipo de Persona</legend>
                         <input type="radio" name="tipo" id="radio-nat-1" value="natural" checked="checked" >
@@ -306,25 +311,35 @@
                 <!-- segundo formulario para los registros juridicos -->
                 <div id="jud">
                     <label for="text-3">NIT</label>
-                    <input type="text" data-clear-btn="true">
-                    <label for="text-3">Correo</label>
-                    <input type="text" data-clear-btn="true">
+                    <input type="text" id="txtNIT" data-clear-btn="true">
                     <label for="text-3">Razón Social</label>
-                    <input type="text" data-clear-btn="true">
+                    <input type="text" id="txtRazonSocial" data-clear-btn="true">
                     <label for="text-3">URL</label>
-                    <input type="text" data-clear-btn="true">
+                    <input type="text" id="txtURL" data-clear-btn="true">
+                    <label for="text-3">Fecha de nacimiento</label>
+                    <input type="date" data-role="date" data-clear-btn="true">
+                    <label for="text-3">Correo empresa</label>
+                    <input type="text" id="txtCorreoEmpresa" data-clear-btn="true">
+                    <label for="text-3">Encargado</label>
+                    <input type="text" id="txtEncargado" data-clear-btn="true">
                 </div>
-
-                <button type="submit">Registrar</button>
+                 <label for="text-3">Suplente sucursal</label>
+                <input type="text" id="txtSuplente" data-clear-btn="true">
+                <label for="text-3">Barrio sucursal</label>
+                <input type="text" id="txtBarrioSucursal" data-clear-btn="true">
+                <label for="text-3">Ciudad sucursal</label>
+                <input type="text" id="txtCiudadSucursal" data-clear-btn="true">
+                <label for="text-3">Direccion</label>
+                <input type="text" id="txtDireccion" data-clear-btn="true">
+<!--            <label for="text-3">Departamento sucursal</label>
+                <input type="text" id="txtDepartamentoSucursal" data-clear-btn="true"> -->
+                <button type="submit">Registrar referido</button>
 
             </form>
             
         </div>
 
 
-        <footer data-role="footer" data-position="fixed">
-            <h1>Pie</h1>
-        </footer>
 
         <div data-role="panel" id="MCRef" data-theme="b" data-display="push">
             <ul data-role="listview">

@@ -28,30 +28,22 @@ $("#productosContent").ready(function(){
 			});
 		});
 });
-$('#forLogin').submit(function() {  //Si entra pero por alguna razon no envia los datos
+$('#forLogin').submit(function(){
 	// recolecta los valores que inserto el usuario
-	var datosUsuario = $("#txtUsername").val()
-	var datosPassword = $("#txtPassword").val()
-	
-  	servidor ="http://localhost:73/mobilemarket_rest/API/Login/Login.php?jsoncallback=?"
+	var datosUsuario = $("#txtUsername").val();
+	var datosPassword = $("#txtPassword").val();
+  	servidor ="http://localhost/servicios/mobilemarket_rest/API/login/login.php";
 
 	 $.getJSON( servidor,{usuario:datosUsuario ,password:datosPassword})
-	 .done(function(respuestaServer) {        
-		
+	 .done(function(respuestaServer){        	
 		if(respuestaServer.validacion == "ok"){
-		  
-		 	//Deberia ir a la pagina de inicio
 		 	alert("Datos correctos");
-			$.mobile.changePage("#inicio")
-		  
+			$.mobile.changePage("#inicio");
 		}else{
-		  
 		  alert("Usuario incorrecto");
 		}
-  
-	 })
-	 	 alert("Se dio click en la funcion") ;   
+	 }); 
 	
 	return false;
-})
+});
 

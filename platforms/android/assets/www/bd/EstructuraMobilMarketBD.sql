@@ -175,7 +175,7 @@ CREATE TABLE IF NOT EXISTS Tbl_Productos (
   estadoProducto TINYINT(1) NOT NULL DEFAULT 1,
   existencias INT NOT NULL,
   nombreProducto VARCHAR(45) NOT NULL,
-  Tbl_Presenataciones_idPresenataciones INT NOT NULL,
+  -- Tbl_Presenataciones_idPresenataciones INT NOT NULL,
   Tbl_Marca_idMarca INT NOT NULL,
   Tbl_SubCategoria_idSubCategoria INT NOT NULL,
   precio DOUBLE NOT NULL,
@@ -254,7 +254,7 @@ CREATE TABLE IF NOT EXISTS Tbl_DetallePedido (
   precio DOUBLE NOT NULL,
   Tbl_Productos_idProductos INT NOT NULL,
   Tbl_Productos_Tbl_Categoria_idCategoria INT NOT NULL,
-  Tbl_Productos_Tbl_Presentaciones_idPresentaciones INT NOT NULL,
+  -- Tbl_Productos_Tbl_Presentaciones_idPresentaciones INT NOT NULL,
   Tbl_Pedidos_idPedidos INT NOT NULL,
   Tbl_Pedidos_idUsuario INT NOT NULL,
   CONSTRAINT fk_Tbl_DetallePedido_Tbl_Productos1
@@ -313,7 +313,7 @@ CREATE TABLE IF NOT EXISTS Tbl_DetalleListaPersonalizada (
   idDetalleListaPersonalizada INT NOT NULL,
   Tbl_Productos_idProductos INT NOT NULL,
   Tbl_Productos_Tbl_Categoria_idCategoria INT NOT NULL,
-  Tbl_Productos_Tbl_Presentaciones_idPresentaciones INT NOT NULL,
+  -- Tbl_Productos_Tbl_Presentaciones_idPresentaciones INT NOT NULL,
   Tbl_ListasPersonalizadas_idListasPersonalizadas INT NOT NULL,
   CONSTRAINT fk_Tbl_DetalleListaPersonalizada_Tbl_Productos1
     FOREIGN KEY (Tbl_Productos_idProductos)
@@ -380,7 +380,7 @@ CREATE TABLE IF NOT EXISTS Tbl_Categoria ( idCategoria INTEGER PRIMARY KEY  AUTO
 -- -----------------------------------------------------
 -- Tabla = Tbl_Productos
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS Tbl_Productos (idProductos INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,estadoProducto TINYINT(1) NOT NULL DEFAULT 1,existencias INT NOT NULL,nombreProducto VARCHAR(45) NOT NULL,Tbl_Presenataciones_idPresenataciones INT NOT NULL,Tbl_Marca_idMarca INT NOT NULL,Tbl_SubCategoria_idSubCategoria INT NOT NULL,precio DOUBLE NOT NULL,Tbl_casa_idTbl_casa INT NOT NULL,Tbl_Categoria_idCategoria INT NOT NULL, CONSTRAINT fk_Tbl_Productos_Tbl_Marca1 FOREIGN KEY (Tbl_Marca_idMarca) REFERENCES Tbl_Fabricante (id_Fabricante) CONSTRAINT fk_Tbl_Productos_Tbl_SubCategoria1 FOREIGN KEY (Tbl_SubCategoria_idSubCategoria) REFERENCES Tbl_SubCategoria (idSubCategoria) CONSTRAINT fk_Tbl_Productos_Tbl_Categoria1 FOREIGN KEY (Tbl_Categoria_idCategoria) REFERENCES Tbl_Categoria (idCategoria));
+CREATE TABLE IF NOT EXISTS Tbl_Productos (idProductos INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,estadoProducto TINYINT(1) NOT NULL DEFAULT 1,existencias INT NOT NULL,nombreProducto VARCHAR(45) NOT NULL,/*Tbl_Presenataciones_idPresenataciones INT NOT NULL,*/Tbl_Marca_idMarca INT NOT NULL,Tbl_SubCategoria_idSubCategoria INT NOT NULL,precio DOUBLE NOT NULL,Tbl_casa_idTbl_casa INT NOT NULL,Tbl_Categoria_idCategoria INT NOT NULL, CONSTRAINT fk_Tbl_Productos_Tbl_Marca1 FOREIGN KEY (Tbl_Marca_idMarca) REFERENCES Tbl_Fabricante (id_Fabricante) CONSTRAINT fk_Tbl_Productos_Tbl_SubCategoria1 FOREIGN KEY (Tbl_SubCategoria_idSubCategoria) REFERENCES Tbl_SubCategoria (idSubCategoria) CONSTRAINT fk_Tbl_Productos_Tbl_Categoria1 FOREIGN KEY (Tbl_Categoria_idCategoria) REFERENCES Tbl_Categoria (idCategoria));
 -- -----------------------------------------------------
 -- Tabla = Tbl_Telefonos
 -- -----------------------------------------------------
@@ -400,7 +400,7 @@ CREATE TABLE IF NOT EXISTS Tbl_Familiar (idFamiliar INTEGER PRIMARY KEY  AUTOINC
 -- -----------------------------------------------------
 -- Tabla = Tbl_DetallePedido
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS Tbl_DetallePedido (idDetallePedido INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,cantidadProducto INT NOT NULL DEFAULT 1,precio DOUBLE NOT NULL,Tbl_Productos_idProductos INT NOT NULL,Tbl_Productos_Tbl_Categoria_idCategoria INT NOT NULL,Tbl_Productos_Tbl_Presentaciones_idPresentaciones INT NOT NULL,Tbl_Pedidos_idPedidos INT NOT NULL,Tbl_Pedidos_idUsuario INT NOT NULL, CONSTRAINT fk_Tbl_DetallePedido_Tbl_Productos1 FOREIGN KEY (Tbl_Productos_idProductos) REFERENCES Tbl_Productos (idProductos) CONSTRAINT fk_Tbl_DetallePedido_Tbl_Pedidos1 FOREIGN KEY (Tbl_Pedidos_idPedidos) REFERENCES Tbl_Pedidos (idPedidos));
+CREATE TABLE IF NOT EXISTS Tbl_DetallePedido (idDetallePedido INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,cantidadProducto INT NOT NULL DEFAULT 1,precio DOUBLE NOT NULL,Tbl_Productos_idProductos INT NOT NULL,Tbl_Productos_Tbl_Categoria_idCategoria INT NOT NULL/*,Tbl_Productos_Tbl_Presentaciones_idPresentaciones INT NOT NULL,*/Tbl_Pedidos_idPedidos INT NOT NULL,Tbl_Pedidos_idUsuario INT NOT NULL, CONSTRAINT fk_Tbl_DetallePedido_Tbl_Productos1 FOREIGN KEY (Tbl_Productos_idProductos) REFERENCES Tbl_Productos (idProductos) CONSTRAINT fk_Tbl_DetallePedido_Tbl_Pedidos1 FOREIGN KEY (Tbl_Pedidos_idPedidos) REFERENCES Tbl_Pedidos (idPedidos));
 -- -----------------------------------------------------
 -- Tabla = Tbl_ListasPersonalizadas
 -- -----------------------------------------------------
@@ -416,6 +416,6 @@ CREATE TABLE IF NOT EXISTS Tbl_CuentasUsuario (contrasenia VARCHAR(45) NOT NULL,
 -- -----------------------------------------------------
 -- Tabla = Tbl_DetalleListaPersonalizada
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS Tbl_DetalleListaPersonalizada ( idDetalleListaPersonalizada INT NOT NULL, Tbl_Productos_idProductos INT NOT NULL, Tbl_Productos_Tbl_Categoria_idCategoria INT NOT NULL, Tbl_Productos_Tbl_Presentaciones_idPresentaciones INT NOT NULL, Tbl_ListasPersonalizadas_idListasPersonalizadas INT NOT NULL, CONSTRAINT fk_Tbl_DetalleListaPersonalizada_Tbl_Productos1 FOREIGN KEY (Tbl_Productos_idProductos) REFERENCES Tbl_Productos (idProductos) CONSTRAINT fk_Tbl_DetalleListaPersonalizada_Tbl_ListasPersonalizadas1 FOREIGN KEY (Tbl_ListasPersonalizadas_idListasPersonalizadas) REFERENCES Tbl_ListasPersonalizadas (idListasPersonalizadas));
+CREATE TABLE IF NOT EXISTS Tbl_DetalleListaPersonalizada ( idDetalleListaPersonalizada INT NOT NULL, Tbl_Productos_idProductos INT NOT NULL, Tbl_Productos_Tbl_Categoria_idCategoria INT NOT NULL/*, Tbl_Productos_Tbl_Presentaciones_idPresentaciones INT NOT NULL*/, Tbl_ListasPersonalizadas_idListasPersonalizadas INT NOT NULL, CONSTRAINT fk_Tbl_DetalleListaPersonalizada_Tbl_Productos1 FOREIGN KEY (Tbl_Productos_idProductos) REFERENCES Tbl_Productos (idProductos) CONSTRAINT fk_Tbl_DetalleListaPersonalizada_Tbl_ListasPersonalizadas1 FOREIGN KEY (Tbl_ListasPersonalizadas_idListasPersonalizadas) REFERENCES Tbl_ListasPersonalizadas (idListasPersonalizadas));
 
 
