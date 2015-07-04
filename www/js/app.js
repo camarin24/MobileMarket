@@ -29,20 +29,21 @@ $("#productosContent").ready(function(){
 		});
 });
 $('#forLogin').submit(function(){
-	// recolecta los valores que inserto el usuario
-	var datosUsuario = $("#txtUsername").val();
-	var datosPassword = $("#txtPassword").val();
-  	servidor ="http://localhost/servicios/mobilemarket_rest/API/login/login.php";
+	// // recolecta los valores que inserto el usuario
+	// var datosUsuario = $("#txtUsername").val();
+	// var datosPassword = $("#txtPassword").val();
+ //  	servidor ="http://localhost/servicios/mobilemarket_rest/API/login/login.php";
 
-	 $.getJSON( servidor,{usuario:datosUsuario ,password:datosPassword})
-	 .done(function(respuestaServer){        	
-		if(respuestaServer.validacion == "ok"){
-		 	alert("Datos correctos");
-			$.mobile.changePage("#inicio");
-		}else{
-		  alert("Usuario incorrecto");
-		}
-	 }); 
+	//  $.getJSON( servidor,{usuario:datosUsuario ,password:datosPassword})
+	//  .done(function(respuestaServer){        	
+	// 	if(respuestaServer.validacion == "ok"){
+	// 	 	alert("Datos correctos");
+	// 		$.mobile.changePage("#inicio");
+	// 	}else{
+	// 	  alert("Usuario incorrecto");
+	// 	}
+	//  }); 
+	 $.mobile.changePage("#inicio");
 	
 	return false;
 });
