@@ -3,6 +3,7 @@ var database = null;
             
     function onDeviceReady(){
         var db = window.sqlitePlugin.openDatabase("Database", "1.0", "Demo", -1);
+        //Dos formas de hacerlo con funcion anonima o con el popuulate de la linea 6
         db.transaction(function(tx) {
             tx.executeSql("CREATE TABLE IF NOT EXISTS Tbl_EstadoPedido (idEstadoPedido INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,nombre VARCHAR(45) NOT NULL");
             // Tabla = Tbl_Departamento
@@ -48,9 +49,9 @@ var database = null;
             // Tabla = Tbl_DetalleListaPersonalizada
             tx.executeSql("CREATE TABLE IF NOT EXISTS Tbl_DetalleListaPersonalizada ( idDetalleListaPersonalizada INT NOT NULL, Tbl_Productos_idProductos INT NOT NULL, Tbl_Productos_Tbl_Categoria_idCategoria INT NOT NULL, Tbl_ListasPersonalizadas_idListasPersonalizadas INT NOT NULL, CONSTRAINT fk_Tbl_DetalleListaPersonalizada_Tbl_Productos1 FOREIGN KEY (Tbl_Productos_idProductos) REFERENCES Tbl_Productos (idProductos) CONSTRAINT fk_Tbl_DetalleListaPersonalizada_Tbl_ListasPersonalizadas1 FOREIGN KEY (Tbl_ListasPersonalizadas_idListasPersonalizadas) REFERENCES Tbl_ListasPersonalizadas (idListasPersonalizadas))");
             //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            alert("Funciono");
+            alert("Funciono"); //1 forma
         }, errorCB, successCB);
-        // database.transaction(PopulateDatabase,errorDB,successDB);
+        // database.transaction(PopulateDatabase,errorDB,successDB); //2 forma
     };
 
     // function PopulateDatabase(tx){
