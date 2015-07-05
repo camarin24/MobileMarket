@@ -53,22 +53,3 @@ function onDeviceReady() {
     alert("ERROR: " + e.message);
     });
 }
-
-// function consultarRf(){
-//     alert("Entro");
-//     var nombre="NombrePrueba";
-//     var db = window.sqlitePlugin.openDatabase({name: "my.db"});
-//     alert(db);
-//     db.transaction(function(tx) {
-//         tx.executeSql("INSERT INTO Tbl_Departamento  VALUES (?)",[nombre],
-//     },function(e) {
-//         alert("ERROR: " + e.message);
-//         })
-//     );
-//     db.readTransaction(function(tx) { 
-//         var resultado=tx.executeSql("Select * from Tbl_Departamento");
-//         alert(resultado);
-//     }
-
-//     // tx.executeSql("CREATE TABLE IF NOT EXISTS Tbl_Departamento (idDepartamento INTEGER PRIMARY KEY  AUTOINCREMENT ,nombre text)");
-// }
