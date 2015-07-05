@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="css/estilo.css">
     <title>MobileMarket</title> 
 </head>
-<body>
+<body onload="onDeviceReady()">
 <!--Login-->
     <div data-role="page" id="login">
         <div data-role="content">
+
         <form id="forLogin">
             <div data-role="fieldcontent">
                 <label for="Username"><b>Usuario</b></label>
@@ -164,8 +165,8 @@
         </div>
         <footer data-role="footer" class="nav-glyphish-example" datta-theme="b" data-position="fixed">
             <div data-role="navbar" data-grid="d" data-iconpos="bottom" >                  
-                <li class="list-style"><a href="#crearRf" data-icon="plus">Crear referido</a></li>    
-                <!-- <li class="list-style"><a id="target" data-icon="plus" <onclick="onDeviceReady()">Crear referido</a></li>     -->
+                <!-- <li class="list-style"><a href="#crearRf" data-icon="plus">Crear referido</a></li>    --> 
+                <li class="list-style"><a id="target" data-icon="plus" onclick="consultarRf()">Crear referido</a></li>    
             </div>
         </footer>
 
