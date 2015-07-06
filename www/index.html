@@ -63,13 +63,41 @@
         <footer data-role="footer" data-position="fixed">
             <div data-role="navbar">
                 <ul>
-                    <li><a href="" data-icon="plus">Añadir</a></li>
+                    <li><a href="#crearPedidos" data-icon="plus">Añadir</a></li>
                     <li><a href="" data-icon="delete">Eliminar</a></li>
                     <li><a href="" data-icon="grid">Opciones</a></li>
                 </ul>
             </div>
         </footer>
-
+        <div data-role="panel" id="bars2" data-theme="b" data-display="push">
+            <ul data-role="listview">
+                <li><a href="#inicio" data-transition="fade">Inicio</a></li>
+                <li><a href="#pedidos" data-transition="fade">Pedidos</a></li>
+                <li><a href="#listas">Listas</a></li>
+                <li><a href="#referido">Referidos</a></li>
+                <li><a href="#notificaciones">Notificaciones</a></li>
+                <li><a href="#indicadores">Indicadores</a></li>
+                <li><a href="#pqr">PQR</a></li> 
+            </ul>
+        </div>
+    </div>
+    <!--Crear pedidos,mejorar-->
+    <div data-role="page" id="crearPedidos">
+        <header data-role="header">
+            <a href="#bars2" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
+            <h1>Pedidos</h1>
+        </header>
+        <div role="main" class="ui-content">
+            <a href="#" class="ui-btn ui-icon-bars ui-btn-icon-right">Usar lista personalizada</a>
+            <a href="#" class="ui-btn ui-icon-action ui-btn-icon-right">Crear pedido</a>
+        </div>
+        <footer data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="" data-icon="arrow-r">Enviar</a></li>
+                </ul>
+            </div>
+        </footer>
         <div data-role="panel" id="bars2" data-theme="b" data-display="push">
             <ul data-role="listview">
                 <li><a href="#inicio" data-transition="fade">Inicio</a></li>
