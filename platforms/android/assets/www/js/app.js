@@ -12,7 +12,7 @@ function onDeviceReady() {
 // });
 
 $("#productosContent").ready(function(){
-	$.getJSON("http://192.168.1.5/servicios/mobilemarket_rest/API/productos/producto/lista")
+	$.getJSON("http://localhost/servicios/mobilemarket_rest/API/productos/producto/lista")
 		.done(function(datos){
 			$.each(datos, function(indice,valor){
 				$("#productosContent").append('<ul data-role="listview" data-split-icon="gear" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:5px !important; border:solid 1px; ">'+
@@ -32,7 +32,7 @@ $('#forLogin').on('click',function(){
 	// recolecta los valores que inserto el usuario
 	var datosUsuario = $("#txtUsername").val();
 	var datosPassword = $("#txtPassword").val();
-  	servidor ="http://192.168.1.5/servicios/mobilemarket_rest/API/login/login.php";
+  	servidor ="http://localhost/servicios/mobilemarket_rest/API/login/login.php";
 	 $.getJSON( servidor,{usuario:datosUsuario ,password:datosPassword})
 	 .done(function(respuestaServer){        	
 		if(respuestaServer.validacion == "ok"){
@@ -47,7 +47,7 @@ $('#forLogin').on('click',function(){
 //Listar Referidos
 // $("#referido").ready(function(){
 // 	//Poner la ip de tu computadora
-// 	$.getJSON("http://192.168.1.5/servicios/mobilemarket_rest/API/referidos/referido/lista")
+// 	$.getJSON("http://localhost/servicios/mobilemarket_rest/API/referidos/referido/lista")
 // 	.done(function(datos){
 // 		$.each(datos, function(indice,valor){
 // 			db.transaction(function(tx){
