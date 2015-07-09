@@ -11,7 +11,7 @@
     <title>MobileMarket</title> 
 </head>
 <!--Lo coloco devido al que el la funcion del DeviceReady no se logra llamar-->
-<body onload="onDeviceReady()">
+<body>
 <!--Login-->
     <div data-role="page" id="login">
         <div data-role="content">
@@ -24,7 +24,7 @@
                 <label for="password"><b>Contraseña</b></label>
                 <input type="password" name="txtPassword" id="txtPassword" placeholder="Contraseña">
             </div>
-            <input type="submit" value="Login" id="botonLogin" data-role="button">
+            <input type="button" value="Login" id="botonLogin" data-role="button">
 
         </form>
         </div> 
@@ -302,10 +302,9 @@
             <h1>Crear referido</h1>
         </header>
         <div role="main" class="ui-content">
-
-            <form action="">
+            <form action="" id="formReferidos">
                 <label for="">Tipo de Documento</label>
-                <select name="" id="txtCedula" data-theme="b">
+                <select  id="txtTipoDocumento" data-theme="b">
                     <option value="1">Cedula de ciudadanía</option>
                     <option value="2">Cedula de extranjería</option>
                     <option value="3">NIT</option>
@@ -329,14 +328,16 @@
                     <option value="false">Masculino</option>
                 </select>
                 <label for="text-3">Fecha de Nacimiento</label>
-                <input type="date" data-role="date" data-clear-btn="true">
+                <input type="date" data-role="date" data-clear-btn="true" id="txtFecha">
                 <label for="text-3">Correo</label>
                 <input type="text" id="txtCorreo" data-clear-btn="true">
+                <label for="text-3">Direccón</label>
+                <input type="text" id="txtDireccion" data-clear-btn="true">
                 <fieldset data-role="controlgroup" data-type="horizontal" >
                     <legend>Tipo de Persona</legend>
                         <input type="radio" name="tipo" id="radio-nat-1" value="natural" checked="checked" >
                         <label for="radio-nat-1">Natural</label>
-                        <input type="radio" name="tipo" id="radio-nat-2" value="natural">
+                        <input type="radio" name="tipo" id="radio-nat-2" value="juridico">
                         <label for="radio-nat-2">Jurídica</label>
                 </fieldset>
                 <!-- segundo formulario para los registros juridicos -->
@@ -347,27 +348,34 @@
                     <input type="text" id="txtRazonSocial" data-clear-btn="true">
                     <label for="text-3">URL</label>
                     <input type="text" id="txtURL" data-clear-btn="true">
-                    <label for="text-3">Fecha de nacimiento</label>
-                    <input type="date" data-role="date" data-clear-btn="true">
                     <label for="text-3">Correo empresa</label>
                     <input type="text" id="txtCorreoEmpresa" data-clear-btn="true">
                     <label for="text-3">Encargado</label>
                     <input type="text" id="txtEncargado" data-clear-btn="true">
+                    <label for="text-3">DIrección de la empresa</label>
+                    <input type="text" id="txtDireccionEmpresa" data-clear-btn="true">
                 </div>
-                 <label for="text-3">Suplente sucursal</label>
-                <input type="text" id="txtSuplente" data-clear-btn="true">
-                <label for="text-3">Barrio sucursal</label>
-                <input type="text" id="txtBarrioSucursal" data-clear-btn="true">
-                <label for="text-3">Ciudad sucursal</label>
-                <input type="text" id="txtCiudadSucursal" data-clear-btn="true">
-                <label for="text-3">Direccion</label>
-                <input type="text" id="txtDireccion" data-clear-btn="true">
-<!--            <label for="text-3">Departamento sucursal</label>
-                <input type="text" id="txtDepartamentoSucursal" data-clear-btn="true"> -->
-                <button type="submit">Registrar referido</button>
-
-            </form>
-            
+                <!--Tercer formulario para sucursales-->
+                 <!-- <fieldset data-role="controlgroup" data-type="horizontal" >
+                    <legend>Añadir sucursal</legend>
+                        <input type="radio" name="tipo" id="sucursal0" value="natural" checked="checked" >
+                        <label for="radio-nat-1">Sin sucursal</label>
+                        <input type="radio" name="tipo" id="sucursal1" value="natural">
+                        <label for="radio-nat-2">Añadir sucursal</label>
+                </fieldset>
+                <div id="sucursal">
+                    <label for="text-3">Suplente sucursal</label>
+                    <input type="text" id="txtSuplente" data-clear-btn="true">
+                    <label for="text-3">Barrio sucursal</label>
+                    <input type="text" id="txtBarrioSucursal" data-clear-btn="true">
+                    <label for="text-3">Ciudad sucursal</label>
+                    <input type="text" id="txtCiudadSucursal" data-clear-btn="true">
+                    <label for="text-3">Direccion</label>
+                    <input type="text" id="txtDireccion" data-clear-btn="true">
+                </div> -->
+                <button type="button" id="btnRegistrarReferidos">Registrar referido</button>
+            </form> 
+            <div id="console"></div>  
         </div>
 
 
@@ -385,42 +393,16 @@
         </div>
     </div>
 
-    
-    <!--Scripts  inutil XD-->
-    <script>
-    $('#forLogin').submit(function() { 
-        // recolecta los valores que inserto el usuario
-        alert("Entro");
-        var datosUsuario = $("#txtUsername").val()
-        var datosPassword = $("#txtPassword").val()
-        
-        archivoValidacion = "http://revolucion.mobi/ejemplos/phonegap/envioFormulario/validacion_de_datos.php?jsoncallback=?"
-
-        $.getJSON( archivoValidacion, { usuario:datosUsuario ,password:datosPassword})
-        .done(function(respuestaServer) {
-            
-        alert(respuestaServer.mensaje + "\nGenerado en: " + respuestaServer.hora + "\n" +respuestaServer.generador)
-            
-        if(respuestaServer.validacion == "ok"){
-        /// si la validacion es correcta, muestra la pantalla "home"
-         $.mobile.changePage("#inicio")
-        }else{        
-        // ejecutar una conducta cuando la validacion falla
-        }
-      
-        })
-        return false;
-    })
-    </script>
+    <!--Scrippt-->
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
+    <script type="text/javascript" src="js/SQLitePlugin.js"></script> 
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/mobile.js"></script>  
     <script type="text/javascript" src="js/app.js"></script>  
     <script type="text/javascript" src="js/bd.js"></script>  
-    <script type="text/javascript" src="js/SQLitePligin.js"></script>  
+     
 
 </body>
 </html>

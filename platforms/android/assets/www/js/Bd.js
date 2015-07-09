@@ -3,7 +3,6 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 // Cordova is ready
 function onDeviceReady() {
-    alert("Entro");
     var db = window.sqlitePlugin.openDatabase({name: "my.db"});
     db.transaction(function(tx) {
         tx.executeSql("CREATE TABLE IF NOT EXISTS Tbl_EstadoPedido (idEstadoPedido INTEGER PRIMARY KEY AUTOINCREMENT ,nombre text)");
@@ -49,27 +48,8 @@ function onDeviceReady() {
         tx.executeSql("CREATE TABLE IF NOT EXISTS Tbl_CuentasUsuario (contrasenia text ,estado TINYINT(1)  DEFAULT 1,nunmeroDocumento INTEGER PRIMARY KEY AUTOINCREMENT, Tbl_Persona_id_Persona INT , CONSTRAINT fk_Tbl_CuentasUsuario_Tbl_Persona1 FOREIGN KEY (Tbl_Persona_id_Persona) REFERENCES Tbl_Persona (id_Persona))");
         // Tabla = Tbl_DetalleListaPersonalizada
         tx.executeSql("CREATE TABLE IF NOT EXISTS Tbl_DetalleListaPersonalizada (idDetalleListaPersonalizada INTEGER PRIMARY KEY  AUTOINCREMENT  , Tbl_Productos_idProductos INT , Tbl_Productos_Tbl_Categoria_idCategoria INT , Tbl_ListasPersonalizadas_idListasPersonalizadas INT , CONSTRAINT fk_Tbl_DetalleListaPersonalizada_Tbl_Productos1 FOREIGN KEY (Tbl_Productos_idProductos) REFERENCES Tbl_Productos (idProductos) CONSTRAINT fk_Tbl_DetalleListaPersonalizada_Tbl_ListasPersonalizadas1 FOREIGN KEY (Tbl_ListasPersonalizadas_idListasPersonalizadas) REFERENCES Tbl_ListasPersonalizadas (idListasPersonalizadas))");
-        alert("Se creo correctamente");
+        alert("Base de datos creada correctamente");
     }, function(e) {
     alert("ERROR: " + e.message);
     });
 }
-
-// function consultarRf(){
-//     alert("Entro");
-//     var nombre="NombrePrueba";
-//     var db = window.sqlitePlugin.openDatabase({name: "my.db"});
-//     alert(db);
-//     db.transaction(function(tx) {
-//         tx.executeSql("INSERT INTO Tbl_Departamento  VALUES (?)",[nombre],
-//     },function(e) {
-//         alert("ERROR: " + e.message);
-//         })
-//     );
-//     db.readTransaction(function(tx) { 
-//         var resultado=tx.executeSql("Select * from Tbl_Departamento");
-//         alert(resultado);
-//     }
-
-//     // tx.executeSql("CREATE TABLE IF NOT EXISTS Tbl_Departamento (idDepartamento INTEGER PRIMARY KEY  AUTOINCREMENT ,nombre text)");
-// }
