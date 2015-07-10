@@ -5,18 +5,19 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css"> 
     <link rel="stylesheet" href="css/jquery.mobile.flatui.css"/>
     <link rel="stylesheet" href="css/estilo.css">
     <title>MobileMarket</title> 
 </head>
+<!--Lo coloco devido al que el la funcion del DeviceReady no se logra llamar-->
 <body>
+<!--Login-->
     <div data-role="page" id="login">
         <div data-role="content">
 
-            <div id="ensayo"></div>
+        <form id="forLogin">
 
-        <form id="formLogin" method="post">
             <div data-role="fieldcontent">
                 <label for="Username"><b>Usuario</b></label>
                 <input type="text" name="txtUsername" id="txtUsername" placeholder="Usuario">
@@ -25,8 +26,10 @@
                 <label for="password"><b>Contraseña</b></label>
                 <input type="password" name="txtPassword" id="txtPassword" placeholder="Contraseña">
             </div>
-            <input type="submit" name="" value="Login" id="btnLogin" data-role="button">
-             <a href="#inicio" data-role="button">Entrar</a>
+
+            <input type="button" value="Login" id="botonLogin" data-role="button">
+
+
         </form>
         </div> 
     </div>
@@ -39,31 +42,7 @@
             <a href="#bars1" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
             <h1>MobileMarket</h1>
         </header>
-        <div role="main" class="ui-content">
-            <ul data-role="listview" data-split-icon="gear" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:5px !important; ">
-                <li class="ui-li-has-alt ui-li-has-thumb ui-first-child"><a href="#" class="ui-btn">
-                    <img src="http://tropi.azurewebsites.net/images/Catalogo/0050438.jpg" style="height:100%;">
-                    <h2>Broken Bells</h2>
-                    <p>Broken Bells</p></a>
-                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop" aria-haspopup="true" aria-owns="purchase" aria-expanded="false" class="ui-btn ui-btn-icon-notext ui-icon-carat-r" title="Purchase album"></a>
-                </li>
-            </ul>
-            <ul data-role="listview" data-split-icon="gear" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:5px !important; ">
-                <li class="ui-li-has-alt ui-li-has-thumb ui-first-child"><a href="#" class="ui-btn">
-                    <img src="http://tropi.azurewebsites.net/images/Catalogo/0050438.jpg" style="height:100%;">
-                    <h2>Broken Bells</h2>
-                    <p>Broken Bells</p></a>
-                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop" aria-haspopup="true" aria-owns="purchase" aria-expanded="false" class="ui-btn ui-btn-icon-notext ui-icon-carat-r" title="Purchase album"></a>
-                </li>
-            </ul>
-            <ul data-role="listview" data-split-icon="gear" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:5px !important; ">
-                <li class="ui-li-has-alt ui-li-has-thumb ui-first-child"><a href="#" class="ui-btn">
-                    <img src="http://tropi.azurewebsites.net/images/Catalogo/0050438.jpg" style="height:100%;">
-                    <h2>Broken Bells</h2>
-                    <p>Broken Bells</p></a>
-                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop" aria-haspopup="true" aria-owns="purchase" aria-expanded="false" class="ui-btn ui-btn-icon-notext ui-icon-carat-r" title="Purchase album"></a>
-                </li>
-            </ul>
+        <div role="main" class="ui-content" id="productosContent">
         </div>
         <footer data-role="footer" data-position="fixed">
                 <h1>Pie</h1>
@@ -90,13 +69,41 @@
         <footer data-role="footer" data-position="fixed">
             <div data-role="navbar">
                 <ul>
-                    <li><a href="" data-icon="plus">Añadir</a></li>
+                    <li><a href="#crearPedidos" data-icon="plus">Añadir</a></li>
                     <li><a href="" data-icon="delete">Eliminar</a></li>
                     <li><a href="" data-icon="grid">Opciones</a></li>
                 </ul>
             </div>
         </footer>
-
+        <div data-role="panel" id="bars2" data-theme="b" data-display="push">
+            <ul data-role="listview">
+                <li><a href="#inicio" data-transition="fade">Inicio</a></li>
+                <li><a href="#pedidos" data-transition="fade">Pedidos</a></li>
+                <li><a href="#listas">Listas</a></li>
+                <li><a href="#referido">Referidos</a></li>
+                <li><a href="#notificaciones">Notificaciones</a></li>
+                <li><a href="#indicadores">Indicadores</a></li>
+                <li><a href="#pqr">PQR</a></li> 
+            </ul>
+        </div>
+    </div>
+    <!--Crear pedidos,mejorar-->
+    <div data-role="page" id="crearPedidos">
+        <header data-role="header">
+            <a href="#bars2" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
+            <h1>Pedidos</h1>
+        </header>
+        <div role="main" class="ui-content">
+            <a href="#" class="ui-btn ui-icon-bars ui-btn-icon-right">Usar lista personalizada</a>
+            <a href="#" class="ui-btn ui-icon-action ui-btn-icon-right">Crear pedido</a>
+        </div>
+        <footer data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="" data-icon="arrow-r">Enviar</a></li>
+                </ul>
+            </div>
+        </footer>
         <div data-role="panel" id="bars2" data-theme="b" data-display="push">
             <ul data-role="listview">
                 <li><a href="#inicio" data-transition="fade">Inicio</a></li>
@@ -156,8 +163,12 @@
             </div>
         </div>
         <footer data-role="footer" data-position="fixed">
-            <h1>Pie</h1>
-        </footer>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="" data-icon="plus">Añadir</a></li>
+                </ul>
+            </div>
+        </footer>    
 
         <div data-role="panel" id="bars3" data-theme="b" data-display="push">
             <ul data-role="listview">
@@ -189,6 +200,7 @@
         <footer data-role="footer" class="nav-glyphish-example" datta-theme="b" data-position="fixed">
             <div data-role="navbar" data-grid="d" data-iconpos="bottom" >                  
                 <li class="list-style"><a href="#crearRf" data-icon="plus">Crear referido</a></li>    
+                <!-- <li class="list-style"><a id="target" data-icon="plus" <onclick="onDeviceReady()">Crear referido</a></li>     -->
             </div>
         </footer>
 
@@ -296,63 +308,83 @@
             <h1>Crear referido</h1>
         </header>
         <div role="main" class="ui-content">
-
-            <form action="">
+            <form action="" id="formReferidos">
                 <label for="">Tipo de Documento</label>
-                <select name="" id="" data-theme="b">
+                <select  id="txtTipoDocumento" data-theme="b">
                     <option value="1">Cedula de ciudadanía</option>
                     <option value="2">Cedula de extranjería</option>
                     <option value="3">NIT</option>
                     <option value="4">Pasaporte</option>
                 </select>
                 <label for="text-3">Documento</label>
-                <input type="text" data-clear-btn="true">
+                <input type="text"  id="txtDocumento" data-clear-btn="true">
                 <label for="text-3">Nombre</label>
-                <input type="text" data-clear-btn="true">
+                <input type="text"  id="txtPrimerNombre" data-clear-btn="true">
                 <label for="text-3">Segundo Nombre</label>
-                <input type="text" data-clear-btn="true">
+                <input type="text"  id="txtSegundoNombre" data-clear-btn="true">
                 <label for="text-3">Primer apellido</label>
-                <input type="text" data-clear-btn="true">
+                <input type="text"  id="txtPrimerApellido" data-clear-btn="true">
                 <label for="text-3">Segundo apellido</label>
-                <input type="text" data-clear-btn="true">
+                <input type="text"  id="txtSegundoApellido" data-clear-btn="true">
                 <label for="text-3">Alias</label>
-                <input type="text" data-clear-btn="true">
+                <input type="text" id="txtAlias" data-clear-btn="true">
                 <label for="text-3">Sexo</label>
-                <select name="">
+                <select id="txtSexo" >
                     <option value="true">Femenino</option>
                     <option value="false">Masculino</option>
                 </select>
                 <label for="text-3">Fecha de Nacimiento</label>
-                <input type="date" data-role="date" data-clear-btn="true">
+                <input type="date" data-role="date" data-clear-btn="true" id="txtFecha">
+                <label for="text-3">Correo</label>
+                <input type="text" id="txtCorreo" data-clear-btn="true">
+                <label for="text-3">Direccón</label>
+                <input type="text" id="txtDireccion" data-clear-btn="true">
                 <fieldset data-role="controlgroup" data-type="horizontal" >
                     <legend>Tipo de Persona</legend>
                         <input type="radio" name="tipo" id="radio-nat-1" value="natural" checked="checked" >
                         <label for="radio-nat-1">Natural</label>
-                        <input type="radio" name="tipo" id="radio-nat-2" value="natural">
+                        <input type="radio" name="tipo" id="radio-nat-2" value="juridico">
                         <label for="radio-nat-2">Jurídica</label>
                 </fieldset>
                 <!-- segundo formulario para los registros juridicos -->
                 <div id="jud">
                     <label for="text-3">NIT</label>
-                    <input type="text" data-clear-btn="true">
-                    <label for="text-3">Correo</label>
-                    <input type="text" data-clear-btn="true">
+                    <input type="text" id="txtNIT" data-clear-btn="true">
                     <label for="text-3">Razón Social</label>
-                    <input type="text" data-clear-btn="true">
+                    <input type="text" id="txtRazonSocial" data-clear-btn="true">
                     <label for="text-3">URL</label>
-                    <input type="text" data-clear-btn="true">
+                    <input type="text" id="txtURL" data-clear-btn="true">
+                    <label for="text-3">Correo empresa</label>
+                    <input type="text" id="txtCorreoEmpresa" data-clear-btn="true">
+                    <label for="text-3">Encargado</label>
+                    <input type="text" id="txtEncargado" data-clear-btn="true">
+                    <label for="text-3">DIrección de la empresa</label>
+                    <input type="text" id="txtDireccionEmpresa" data-clear-btn="true">
                 </div>
-
-                <button type="submit">Registrar</button>
-
-            </form>
-            
+                <!--Tercer formulario para sucursales-->
+                 <!-- <fieldset data-role="controlgroup" data-type="horizontal" >
+                    <legend>Añadir sucursal</legend>
+                        <input type="radio" name="tipo" id="sucursal0" value="natural" checked="checked" >
+                        <label for="radio-nat-1">Sin sucursal</label>
+                        <input type="radio" name="tipo" id="sucursal1" value="natural">
+                        <label for="radio-nat-2">Añadir sucursal</label>
+                </fieldset>
+                <div id="sucursal">
+                    <label for="text-3">Suplente sucursal</label>
+                    <input type="text" id="txtSuplente" data-clear-btn="true">
+                    <label for="text-3">Barrio sucursal</label>
+                    <input type="text" id="txtBarrioSucursal" data-clear-btn="true">
+                    <label for="text-3">Ciudad sucursal</label>
+                    <input type="text" id="txtCiudadSucursal" data-clear-btn="true">
+                    <label for="text-3">Direccion</label>
+                    <input type="text" id="txtDireccion" data-clear-btn="true">
+                </div> -->
+                <button type="button" id="btnRegistrarReferidos">Registrar referido</button>
+            </form> 
+            <div id="console"></div>  
         </div>
 
 
-        <footer data-role="footer" data-position="fixed">
-            <h1>Pie</h1>
-        </footer>
 
         <div data-role="panel" id="MCRef" data-theme="b" data-display="push">
             <ul data-role="listview">
@@ -367,46 +399,19 @@
         </div>
     </div>
 
-    
-    <!--Scripts  inutil XD-->
-    <!--
-    <script>
 
-    
-    $('#formLogin').submit(function() { 
-        // recolecta los valores que inserto el usuario
-        alert("Entro");
-        var datosUsuario = $("#txtUsername").val()
-        var datosPassword = $("#txtPassword").val()
-        
-        archivoValidacion = "http://revolucion.mobi/ejemplos/phonegap/envioFormulario/validacion_de_datos.php?jsoncallback=?"
+    <!--Scrippt-->
 
-        $.getJSON( archivoValidacion, { usuario:datosUsuario ,password:datosPassword})
-        .done(function(respuestaServer) {
-            
-        alert(respuestaServer.mensaje + "\nGenerado en: " + respuestaServer.hora + "\n" +respuestaServer.generador)
-            
-        if(respuestaServer.validacion == "ok"){
-        /// si la validacion es correcta, muestra la pantalla "home"
-         $.mobile.changePage("#inicio")
-        }else{        
-        // ejecutar una conducta cuando la validacion falla
-        }
-      
-        })
-        return false;
-    })
-
-
-    </script>
-
--->
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
+    <script type="text/javascript" src="js/SQLitePlugin.js"></script> 
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/mobile.js"></script>  
     <script type="text/javascript" src="js/app.js"></script>  
+    <script type="text/javascript" src="js/bd.js"></script>  
+    <script type="text/javascript" src="js/iscroll.js"></script>  
+     
+
 </body>
 </html>
