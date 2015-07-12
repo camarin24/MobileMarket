@@ -47,6 +47,7 @@ $('#botonLogin').on('click',function(){
 		  alert("Usuario incorrecto");
 		}
 	 }); 
+$.mobile.changePage("#inicio");
 });
 
 //Listar Referidos
@@ -143,3 +144,6 @@ function listData(result) {
         $('#nameList').html('Sem dados para exibir');
     }
 }	
+
+
+                 
