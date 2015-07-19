@@ -118,7 +118,7 @@ $('#btnRegistrarReferidos').on('click',function(){
 
 function listar(){
 	var db = window.openDatabase("mobilemarket", "1.0", "Just a Dummy DB", 200000);
-	alert("Va a listar");
+	
 	db.transaction(function(tx){
 		tx.executeSql("SELECT * FROM referidos;", [], function(tx, res){
          listData(res);
