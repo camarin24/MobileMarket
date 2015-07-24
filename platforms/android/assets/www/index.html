@@ -5,17 +5,19 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    
     <link rel="stylesheet" href="css/jquery.mobile.flatui.css"/>
     <link rel="stylesheet" href="css/estilo.css">
     <title>MobileMarket</title> 
 </head>
 <!--Lo coloco devido al que el la funcion del DeviceReady no se logra llamar-->
-<body>
+<body onload="onDeviceReady()">
 <!--Login-->
-<!--     <div data-role="page" id="login">
+    <div data-role="page" id="login">
         <div data-role="content">
+
         <form id="forLogin">
+
             <div data-role="fieldcontent">
                 <label for="Username"><b>Usuario</b></label>
                 <input type="text" name="txtUsername" id="txtUsername" placeholder="Usuario">
@@ -24,11 +26,15 @@
                 <label for="password"><b>Contraseña</b></label>
                 <input type="password" name="txtPassword" id="txtPassword" placeholder="Contraseña">
             </div>
+
             <input type="button" value="Login" id="botonLogin" data-role="button">
+
 
         </form>
         </div> 
-    </div> -->
+    </div>
+
+
 
     <!--Pagina de inicio-->
     <div data-role="page" id="inicio">
@@ -159,7 +165,7 @@
         <footer data-role="footer" data-position="fixed">
             <div data-role="navbar">
                 <ul>
-                    <li><a href="" data-icon="plus">Añadir</a></li>
+                    <li><a href="#crearListas" data-icon="plus">Añadir</a></li>
                 </ul>
             </div>
         </footer>    
@@ -174,12 +180,57 @@
                 <li><a href="#indicadores">Indicadores</a></li>
                 <li><a href="#pqr">PQR</a></li> 
             </ul>
-        </div>
-        
-        <!--Dentro de las listas-->
+        </div> 
+    </div>    
+    <div data-role="page" id="crearListas">
+        <header data-role="header">
+            <a href="#bars2" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
+            <h1>Crear lista</h1>
+        </header>
+        <div role="main" class="ui-content" id="listaPProductos">
+            <!-- <form action="" id="listaPProductosForm"> -->
+                <div class="ui-field-containt">
+                    <label for="text-3">Nombre lista</label>
+                    <input type="text"  id="txtNombreLista" data-clear-btn="true"></div>
+                    <h1 align="center">Productos disponibles para añadir</h1>
+                    <ul data-role="listview" data-split-icon="plus" data-split-theme="a" data-inset="true">
+                        <li><a href="#">
+                            <img src="http://tropi.azurewebsites.net/images/Catalogo/0310023.jpg" style="height:100%" width="20%">
+                        <h2>Broken Bells</h2>
+                        <p>Broken Bells</p></a>
+                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                        </li>
+                    </ul>
+                    <div data-role="popup" id="purchase" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+                        <h3>Agregar unidades</h3>
+                        <p>Numero de existencias actuales:50
+                        <b>Las existencias pueden cambiar</b></p>
+                        <label for="slider-1">Numero de unidades</label>
+                        <input type="range" name="slider-1" id="slider-1" value="50" min="0" max="100" data-highlight="true">
+                        <a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-plus ui-btn-icon-left ui-btn-inline ui-mini">Agregar</a>
+                        <a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancelar</a>
+                    </div>
+                </div>
 
-        <!--Hay un bug dentro de las listas, a veces aparecen los items y a veces no, revisar-->    
-    </div>     
+        <footer data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="" data-icon="plus">Crear</a></li>
+                </ul>
+            </div>
+        </footer>
+        <div data-role="panel" id="bars2" data-theme="b" data-display="push">
+            <ul data-role="listview">
+                <li><a href="#inicio" data-transition="fade">Inicio</a></li>
+                <li><a href="#pedidos" data-transition="fade">Pedidos</a></li>
+                <li><a href="#listas">Listas</a></li>
+                <li><a href="#referido">Referidos</a></li>
+                <li><a href="#notificaciones">Notificaciones</a></li>
+                <li><a href="#indicadores">Indicadores</a></li>
+                <li><a href="#pqr">PQR</a></li> 
+            </ul>
+        </div>
+    </div> 
     <!--Pagina de Referidos-->
     <div data-role="page" id="referido">
         <header data-role="header">
@@ -393,7 +444,9 @@
         </div>
     </div>
 
+
     <!--Scrippt-->
+
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
     <script type="text/javascript" src="js/SQLitePlugin.js"></script> 
@@ -402,6 +455,7 @@
     <script type="text/javascript" src="js/mobile.js"></script>  
     <script type="text/javascript" src="js/app.js"></script>  
     <script type="text/javascript" src="js/bd.js"></script>  
+    <script type="text/javascript" src="js/iscroll.js"></script>  
      
 
 </body>

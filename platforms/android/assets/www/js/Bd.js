@@ -3,7 +3,8 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 // Cordova is ready
 function onDeviceReady() {
-    var db = window.sqlitePlugin.openDatabase({name: "my.db"});
+    // var db = window.sqlitePlugin.openDatabase({name: "my.db"});
+    var db = window.openDatabase("mobilemarket", "1.0", "Just a Dummy DB", 200000);
     db.transaction(function(tx) {
         tx.executeSql("CREATE TABLE IF NOT EXISTS Tbl_EstadoPedido (idEstadoPedido INTEGER PRIMARY KEY AUTOINCREMENT ,nombre text)");
         // Tabla = Tbl_Departamento
@@ -48,8 +49,55 @@ function onDeviceReady() {
         tx.executeSql("CREATE TABLE IF NOT EXISTS Tbl_CuentasUsuario (contrasenia text ,estado TINYINT(1)  DEFAULT 1,nunmeroDocumento INTEGER PRIMARY KEY AUTOINCREMENT, Tbl_Persona_id_Persona INT , CONSTRAINT fk_Tbl_CuentasUsuario_Tbl_Persona1 FOREIGN KEY (Tbl_Persona_id_Persona) REFERENCES Tbl_Persona (id_Persona))");
         // Tabla = Tbl_DetalleListaPersonalizada
         tx.executeSql("CREATE TABLE IF NOT EXISTS Tbl_DetalleListaPersonalizada (idDetalleListaPersonalizada INTEGER PRIMARY KEY  AUTOINCREMENT  , Tbl_Productos_idProductos INT , Tbl_Productos_Tbl_Categoria_idCategoria INT , Tbl_ListasPersonalizadas_idListasPersonalizadas INT , CONSTRAINT fk_Tbl_DetalleListaPersonalizada_Tbl_Productos1 FOREIGN KEY (Tbl_Productos_idProductos) REFERENCES Tbl_Productos (idProductos) CONSTRAINT fk_Tbl_DetalleListaPersonalizada_Tbl_ListasPersonalizadas1 FOREIGN KEY (Tbl_ListasPersonalizadas_idListasPersonalizadas) REFERENCES Tbl_ListasPersonalizadas (idListasPersonalizadas))");
-        alert("Base de datos creada correctamente");
+        // alert("Base de datos creada correctamente"); 
     }, function(e) {
     alert("ERROR: " + e.message);
     });
 }
+
+
+$("#productosContent").ready(function(){
+    $.getJSON("http://localhost:73/servicios/mobilemarket_rest/API/productos/producto/lista")
+        .done(function(datos){
+            $.each(datos, function(indice,valor){
+                $("#productosContent").append('<ul data-role="listview" data-split-icon="gear" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="margin:5px !important; border:solid 1px; ">'+
+                    '<li class="ui-li-has-alt ui-li-has-thumb ui-first-child"><a href="#" class="ui-btn">'+
+                        '<img src="'+valor.imagen+'" style="height:100%;">'+
+                        '<h2>'+valor.nombre+'</h2>'+
+                        '<p>Uso: '+valor.descripcion+'</p></a>'+
+                        '<a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop" aria-haspopup="true" aria-owns="purchase" aria-expanded="false" class="ui-btn ui-btn-icon-notext ui-icon-carat-r" title="Purchase album"></a>'+
+                    '</li>'+
+                    '</ul>');
+            });
+        });
+});
+
+
+$("#listaPProductos").ready(function(){
+    $.getJSON("http://localhost:73/servicios/mobilemarket_rest/API/productos/producto/lista")
+        .done(function(datos){
+            $.each(datos, function(indice,valor){
+                $("#listaPProductos").append('<ul data-role="listview" data-split-icon="plus" data-split-theme="a" data-inset="true">'+
+                    '<li><a href="#"><img src="http://tropi.azurewebsites.net/images/Catalogo/0310023.jpg" style="height:100%">'+
+                        '<h2>Nobre producto</h2>'+
+                        '<p>Uso:Descripcion</p></a>'+
+                        '<a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>'+
+                        '</li></ul>'
+                        // '<div data-role="popup" id="purchase" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">'+
+                        // '<h3>Agregar unidades</h3>'+
+                        // '<p>Numero de existencias actuales:50'+
+                        // '<b>Las existencias pueden cambiar</b></p>'+
+                        // '<label for="slider-1">Numero de unidades</label>'+
+                        // '<input type="range" name="slider-1" id="slider-1" value="50" min="0" max="100" data-highlight="true">'+
+                        // '<a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-plus ui-btn-icon-left ui-btn-inline ui-mini">Agregar</a>'+
+                        // '<a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancelar</a>'+
+                        // '</div></div>'
+                        );
+            });
+        });
+});
+// inner join
+// Select tbl_Productos.Nombre, tbl_Productos.Existencias,tbl_Productos.Precio,Categoria.nombre from tbl_productos 
+// inner join Tbl_ListasPersonalizadas on tbl_DetallelistaPersonalizadas.Tbl_ListasPersonalizadas:idListasPersonalizadas = Tbl_ListasPersonalizadas.idListasPersonalizadas
+// inner join tbl_DetallelistaPersonalizadas on tbl_Productos.idProductos = tbl_DetallelistaPersonalizadas.Tbl_Productos_idProductos
+// inner join tbl_DetallelistaPersonalizadas on tbl_Productos.idCateogira = tbl_DetallelistaPersonalizadas.Tbl_Productos_idProductos

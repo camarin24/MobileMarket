@@ -1,6 +1,9 @@
-document.addEventListener("deviceready", onDeviceReady, false);
+// document.addEventListener("deviceready", onDeviceReady, false);
+$(document).ready(function(){
+	listar();
+})
 // Cordova is ready
-function onDeviceReady() {
+function onDeviceReady() { 
   listar();
 }
 
@@ -27,8 +30,10 @@ $("#productosContent").ready(function(){
 		});
 });
 
+
+
 //Login
-$('#forLogin').on('click',function(){
+$('#botonLogin').on('click',function(){
 	// recolecta los valores que inserto el usuario
 	var datosUsuario = $("#txtUsername").val();
 	var datosPassword = $("#txtPassword").val();
@@ -42,6 +47,7 @@ $('#forLogin').on('click',function(){
 		  alert("Usuario incorrecto");
 		}
 	 }); 
+$.mobile.changePage("#inicio");
 });
 
 //Listar Referidos
@@ -70,7 +76,7 @@ $('#forLogin').on('click',function(){
 // });
 
 $('#btnRegistrarReferidos').on('click',function(){
-	var db = window.sqlitePlugin.openDatabase("mobilemarket", "1.0", "Just a Dummy DB", 200000);
+	var db = window.openDatabase("mobilemarket", "1.0", "Just a Dummy DB", 200000);
 	alert("Entro funcion de traer datos");
 	registro = {
 		'tipoDocumento': $("#txtTipoDocumento").val(),
@@ -111,7 +117,7 @@ $('#btnRegistrarReferidos').on('click',function(){
 });
 
 function listar(){
-	var db = window.sqlitePlugin.openDatabase("mobilemarket", "1.0", "Just a Dummy DB", 200000);
+	var db = window.openDatabase("mobilemarket", "1.0", "Just a Dummy DB", 200000);
 	alert("Va a listar");
 	db.transaction(function(tx){
 		tx.executeSql("SELECT * FROM referidos;", [], function(tx, res){
@@ -139,3 +145,5 @@ function listData(result) {
     }
 }	
 
+
+                 
